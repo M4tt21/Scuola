@@ -1,6 +1,6 @@
-numMax.out: top.o max.o
-	cc top.o max.o
+nummaggiore.out: top.o max.o 
+    cc top.o max.o
 top.o: top.c max.h
-	cc -c top.c
+    cc -c top.c
 max.o: max.c max.h
-	cc -c max.c
+    cc -c max.c
