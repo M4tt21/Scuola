@@ -1,15 +1,7 @@
 #include<stdio.h>
 #include<stdbool.h>
-
-
-
-int min(int a, int b){
-    if (a<b)
-    {
-        return a;
-    }
-    return b;
-}
+#include "max.h"
+#include "min.h"
 
 int main(){
     int n1,n2,opt;
