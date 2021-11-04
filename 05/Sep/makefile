@@ -1,4 +1,4 @@
-max.out: top.o max.o
+numMax.out: top.o max.o
 	cc top.o max.o
 
 top.o: top.c max.h
