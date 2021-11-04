@@ -8,4 +8,3 @@ top.o: top.c max.h min.h
 	cc -c top.c
 clean:
 	rm -r *.o
-	rm -r numMaxMin.out
