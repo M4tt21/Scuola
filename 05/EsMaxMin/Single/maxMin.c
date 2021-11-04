@@ -23,7 +23,7 @@ int main(){
     printf("\nN.1:");
     scanf("%d",&n1);
     printf("\nN.2:");
-    scanf("%d",&n1);
+    scanf("%d",&n2);
 
     do{
         err=false;
