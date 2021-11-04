@@ -15,7 +15,7 @@ int main(){
     printf("\nN.2:");
     scanf("%d",&n1);
 
-    printf("%d e` il maggiore!",max(n1,n2));
+    printf("%d e` il maggiore!\n",max(n1,n2));
 
     return 0;
 }
