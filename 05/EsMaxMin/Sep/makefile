@@ -6,3 +6,6 @@ min.o: min.c min.h
 	cc -c min.c
 top.o: top.c max.h min.h
 	cc -c top.c
+clean:
+	rm -r *.o
+	rm -r numMaxMin.out
