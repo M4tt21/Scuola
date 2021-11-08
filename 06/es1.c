@@ -26,7 +26,7 @@ int main(){
                 break;
 
             case 0: // FIGLIO 2
-                execl("/bin/ls", "ls -l", (char *)0);
+                execl("/bin/ls", "-l", (char *)0);
                 printf("exec failed\n"); // DI NORMA NON ESEGUITO
                 break;
             
