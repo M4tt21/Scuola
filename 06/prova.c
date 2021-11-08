@@ -5,6 +5,6 @@
 
 int main(){
     execl("/bin/pwd", "pwd", (char *)0);
-    execl("/bin/ls", "ls", "­-l", (char *)0);
+    execl("/bin/ls", "ls -l", (char *)0);
     return 0;
 }
