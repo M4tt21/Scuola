@@ -61,10 +61,10 @@ int main() {
                 clear();
                 //Print score
                 attron(COLOR_PAIR(4));
-                mvprintw(1,2,sLives);
+                mvprintw(1,2,score);
                 //Print vite
                 attron(COLOR_PAIR(4));
-                mvprintw(1,screenMax.x-lives-2,"\3",score);
+                mvprintw(1,screenMax.x-lives-2,sLives);
                 //Print palla
                 attron(COLOR_PAIR(2));
                 mvprintw(ball.c.y, ball.c.x, ball.s);
@@ -147,8 +147,9 @@ int main() {
             }while(true);
         }while(lives>0);
         clear();
-        mvprintw(screenMax.y/2,screenMax.y/2,"FUCK YOU!");
-        mvprintw(screenMax.y/2,screenMax.y/2+1,"Vuoi rigiocare[y|n]?");
+        mvprintw(screenMax.y/2,screenMax.x/2,"FUCK YOU!");
+        mvprintw(screenMax.y/2+1,screenMax.x/2,"Vuoi rigiocare[y|n]?");
+        timeout(-1);
     }while(getch()==121);
 }
 
