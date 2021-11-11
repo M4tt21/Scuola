@@ -19,6 +19,7 @@ int main()
     struct posizione coordsObj = { MAXX/2, MAXY/2 };
     
     do{
+        clear();
         mvaddch(coordsObj.y, coordsObj.x, '+');
         refresh();
         int c = getch();
