@@ -18,7 +18,7 @@ typedef struct{
     coords c;
 }sprite;
 
-sprite bar = {"     ",5, 0, 0};
+sprite bar = {"          ",10, 0, 0};
 
 sprite ball = {"  ",2, 0, 0};
 

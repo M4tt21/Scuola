@@ -39,15 +39,18 @@ int main() {
 
     //Colori
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
+    init_pair(2, COLOR_BLACK, COLOR_RED);
     attron(COLOR_PAIR(1));
 
     do{
-        usleep(800000);
+        usleep(100000);
 
         clear();
         //Print palla
+        attron(COLOR_PAIR(2));
         mvprintw(ball.c.y, ball.c.x, ball.s);
         //Print barra
+        attron(COLOR_PAIR(1));
         mvprintw(bar.c.y, bar.c.x, bar.s);
         //Refresh per visualizzare
         refresh();
