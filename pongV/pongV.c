@@ -79,7 +79,7 @@ int main() {
             ball.c.y+=dirY;
 
         //Gestione Collisione Palla Barra
-        if((newY>=bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
+        if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
             dirY*=-1;
 
 
