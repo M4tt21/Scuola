@@ -5,6 +5,7 @@
 int main() {
     int maxy = 0, maxx = 0;
     int newx = 0;
+    int i=0;
     int direzione = 1;
     initscr();
     noecho();
@@ -13,10 +14,9 @@ int main() {
     int x = maxx/2, y = maxy/2;  /* Centro dello schermo */
     while(true) {
         clear();
-        timeout(0); /* Non attende il tasto invio */
-        char c=getch();
-        printw( "%c : [%d]", c, c);
+        printw( "%c : [%d]\n", i, i);
         refresh();
+        i++;
         usleep(40000);
     }
     endwin();
