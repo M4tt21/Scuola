@@ -43,7 +43,7 @@ int main() {
     attron(COLOR_PAIR(1));
 
     do{
-        usleep(500000);
+        usleep(100000);
 
         clear();
         //Print palla
