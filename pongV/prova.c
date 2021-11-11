@@ -12,7 +12,8 @@ int main() {
     bool held=false;
     while (1)
     {
-        sleep(1);
+        usleep(10);
+        
         timeout(0);
         printw("%c", getch());
         refresh();
