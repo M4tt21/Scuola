@@ -38,7 +38,7 @@ while(true) {
   if(newy2 >= maxy || newy2 < 0) direzioney2*=-1;
   else palla2.y += direzioney2;
   /* Verifica collisione tra Oggetto 1 e 2 */
-  if(palla1.x == palla2.x && palla1.y == palla2.y) {flash(); break;}
+  if(palla1.x == palla2.x && palla1.y == palla2.y-1) {flash(); break;}
   timeout(0); 
   if(getch() == 113) break;
   }
