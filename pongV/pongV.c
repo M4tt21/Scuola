@@ -39,12 +39,11 @@ int main() {
     bar.c.y=screenMax.y-BAR_DISTANCE;
     bar.c.x=((screenMax.x-(bar.l/2))/2) & ~1;
 
-    //Colori
+    //Set Colori
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
     init_pair(2, COLOR_BLACK, COLOR_RED);
     init_pair(3, COLOR_BLACK, COLOR_BLACK);
-    attron(COLOR_PAIR(1));
-
+    
     do{
         //usleep(100000);
 
