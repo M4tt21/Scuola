@@ -61,7 +61,7 @@ int main() {
                 mvprintw(1,2,"Score: [%d]",score);
                 //Print vite
                 attron(COLOR_PAIR(4));
-                mvprintw(1,screenMax.x-lives-2, "Lives: [%d]", lives);
+                mvprintw(1,screenMax.x-12, "Lives: [%d]", lives);
                 //Print palla
                 attron(COLOR_PAIR(2));
                 mvprintw(ball.c.y, ball.c.x, ball.s);
