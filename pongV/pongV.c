@@ -35,6 +35,7 @@ int main() {
     init_pair(3, COLOR_BLACK, COLOR_BLACK);
     init_pair(4, COLOR_BLUE, COLOR_BLACK);
     do{
+        lives=STARTING_LIVES;
         do{
             //Spawn palla
             ball.c.y=(screenMax.y/2);
@@ -52,7 +53,7 @@ int main() {
 
             //Reset Score
             score=0;
-            lives=STARTING_LIVES;
+            
 
             do{
 
@@ -95,7 +96,7 @@ int main() {
                     ball.c.y+=dirY;
 
                 //Gestione Collisione Palla Barra
-                if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l)){
+                if((newY==bar.c.y-1) && (newX+ball.l>=bar.c.x && newX<=bar.c.x+bar.l)){
                     dirY*=-1;
                     score++;
                     msBallSpeed=msBallSpeed-(msBallSpeed/10);
