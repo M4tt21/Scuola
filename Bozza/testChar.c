@@ -18,5 +18,10 @@ int main() {
         i++;
         usleep(40000);
     }
+    while (true)
+    {
+        /* code */
+    }
+    
     endwin();
 }
