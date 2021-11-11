@@ -7,6 +7,7 @@ int main() {
     int dirY=-1;
     int newX;
     int newY;
+    clock_t 
 
     //inizializzazioni ncurses
     initscr();
