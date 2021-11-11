@@ -20,7 +20,7 @@ int main() {
         /* Inverte la direzione del movimento toccando il bordo */
         if(newx >= maxx || newx < 0) direzione*= -1;
         else x+= direzione;
-        timeout(1); /* Non attende il tasto invio */
+        //timeout(1); /* Non attende il tasto invio */
         if(getch() == 113) break; /* Esce alla pressione del tasto 'q' */
     }
     endwin();
