@@ -2,37 +2,45 @@
 #include <unistd.h>
 #include <ncurses.h>
 #include <stdbool.h>
-
+struct pos{
+int x;  /* Coordinata x */
+int y; /* Coordinata y */
+};
 int main() {
 int maxy = 0, maxx = 0;
-int newx = 0, newy = 0;
-int direzionex = 1, direzioney = 1;
+int newx1 = 0, newy1 = 0;
+int newx2 = 0, newy2 = 0;
+int direzionex1 = 1, direzioney1 = 1;
+int direzionex2 = 1, direzioney2 = 1;
 initscr();
 noecho();
 curs_set(false);
-getmaxyx(stdscr, maxy, maxx); /* Ottiene dimensioni schermo */
-int x = maxx/2, y = maxy/2; /* Centro dello schermo */
+getmaxyx(stdscr, maxy, maxx); 
+struct pos palla1, palla2;
+palla1.x=0; palla1.y=maxy;
+palla2.x=maxx; palla2.y=maxy;
 while(true) {
-        getmaxyx(stdscr, maxy, maxx); /* Ottiene dimensioni schermo */
-        clear();
-        mvprintw(y, x, "o");
-        refresh();
-        usleep(40000);
-        newx = x + direzionex;
-        newy = y + direzioney;
-        /* Inverte la direzione del movimento toccando il bordo */
-        if(newx >= maxx || newx < 0){ 
-            direzionex*= -1;
-            beep();
-        }
-        else x+= direzionex;
-        if(newy >= maxy || newy < 0){ 
-            direzioney*= -1;
-            beep();
-        }
-        else y+= direzioney;
-        timeout(1); /* Non attende il tasto invio */
-        if(getch() == 113) break; /* Esce alla pressione del tasto 'q' */
-    }
-    endwin();
+  clear();
+  mvprintw(palla1.y, palla1.x, "o");
+  mvprintw(palla2.y, palla2.x, "O");
+  refresh();
+  usleep(10000);
+  newx1 = palla1.x + direzionex1; newy1 = palla1.y + direzioney1;
+  newx2 = palla2.x + direzionex2; newy2 = palla2.y + direzioney2;
+  /* Verifica collisione bordi ­ Oggetto 1 */
+  if(newx1 >= maxx || newx1 < 0) direzionex1*=-1;
+  else palla1.x += direzionex1;
+  if(newy1 >= maxy || newy1 < 0) direzioney1*=-1;
+  else palla1.y += direzioney1;
+  /* Verifica collisione bordi ­ Oggetto 2 */
+  if(newx2 >= maxx || newx2 < 0) direzionex2*=-1;
+  else palla2.x += direzionex2;
+  if(newy2 >= maxy || newy2 < 0) direzioney2*=-1;
+  else palla2.y += direzioney2;
+  /* Verifica collisione tra Oggetto 1 e 2 */
+  if(palla1.x == palla2.x && palla1.y == palla2.y) {flash(); break;}
+  timeout(1); 
+  if(getch() == 113) break;
+  }
+endwin();
 }
