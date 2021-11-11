@@ -7,7 +7,7 @@ int main() {
     int dirY=-1;
     int newX;
     int newY;
-    int msTimer, msTrigger;
+    int msTimer;
     clock_t start, tDiff;
 
     //inizializzazioni ncurses
@@ -113,7 +113,7 @@ int main() {
             }
             tDiff=clock()-start;
             msTimer=tDiff * 1000 / CLOCKS_PER_SEC;
-        }while(msTimer<msTrigger);
+        }while(msTimer<FRAME_SPEED_MS);
     }while(true);
 }
 
