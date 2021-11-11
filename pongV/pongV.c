@@ -87,10 +87,11 @@ int main() {
         if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l)){
             dirY*=-1;
             score++;
+            msBallSpeed=msBallSpeed/2;
         }
 
         //Aggiornamento difficolta su score
-        msBallSpeed=(msBallSpeed/100)*110;
+        
         
         //timer per il frame
         fflush(stdin);
