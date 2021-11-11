@@ -79,7 +79,7 @@ int main() {
             ball.c.y+=dirY;
 
         //Gestione Collisione Palla Barra
-        if((newY==bar.c.y) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
+        if((newY>=bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
             dirY*=-1;
 
 
@@ -113,6 +113,10 @@ int main() {
             }
             tDiff=clock()-start;
             msTimer=tDiff * 1000 / CLOCKS_PER_SEC;
+            clear();
+            //Print palla
+            attron(COLOR_PAIR(2));
+            mvprintw(ball.c.y, ball.c.x, ball.s);
             //Print barra
             attron(COLOR_PAIR(1));
             mvprintw(bar.c.y, bar.c.x, bar.s);
