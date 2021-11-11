@@ -14,7 +14,7 @@ int main() {
     while(true) {
         clear();
         timeout(1); /* Non attende il tasto invio */
-        mvprintw(y,x,getch());
+        mvprintw(y,x,(char *)getch());
         refresh();
         usleep(40000);
     }
