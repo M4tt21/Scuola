@@ -13,7 +13,7 @@ int main() {
     int x = maxx/2, y = maxy/2;  /* Centro dello schermo */
     while(true) {
         clear();
-        timeout(1); /* Non attende il tasto invio */
+        timeout(-1); /* Non attende il tasto invio */
         char c=getch();
         printw( "%c : [%d]", c, c);
         refresh();
