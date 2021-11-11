@@ -12,6 +12,7 @@ int main() {
     bool held=false;
     while (1)
     {
+        sleep(1);
         timeout(0);
         printw("%c", getch());
         refresh();
