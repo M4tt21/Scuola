@@ -20,7 +20,7 @@ typedef struct{
 
 sprite bar = {"\223\223\223\223\223",5, 0, 0};
 
-sprite ball = {"\219\219",2, 0, 0};
+sprite ball = {"\u2588\u2588",2, 0, 0};
 
 
 bool rngBool(){
