@@ -13,8 +13,8 @@ int main() {
     clock_t t=clock();
     while (1)
     {
-        usleep(10000);
-        printw("%f", clock()-t);
+        sleep(1);
+        printw("%f\n", clock()-t);
         refresh();
     }
     return 0;
