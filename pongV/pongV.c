@@ -87,14 +87,14 @@ int main() {
         {
         case KEY_RIGHT:
             if(bar.c.x<screenMax.x-bar.l)
-                bar.c.x+=1;
+                bar.c.x+=BAR_SPEED; 
             else
                 beep();
             break;
 
         case KEY_LEFT:
             if(bar.c.x>0)
-                bar.c.x-=1;
+                bar.c.x-=BAR_SPEED;
             else
                 beep();
             break;

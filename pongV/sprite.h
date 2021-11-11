@@ -5,7 +5,9 @@
 #include <time.h>
 #include <stdlib.h>
 
+
 #define BAR_DISTANCE 2
+#define BAR_SPEED 2
 
 typedef struct{
     int x;
