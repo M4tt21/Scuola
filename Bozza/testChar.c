@@ -12,8 +12,8 @@ int main() {
     curs_set(false);
     getmaxyx(stdscr, maxy, maxx);  /* Ottiene dimensioni schermo */
     int x = maxx/2, y = maxy/2;  /* Centro dello schermo */
-    while(true) {
-        printw( "%c : [%d]\n", i, i);
+    while(i<300) {
+        printw("%c : [%d] || ", i, i);
         refresh();
         i++;
         usleep(40000);
