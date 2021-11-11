@@ -87,7 +87,7 @@ int main() {
         if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l)){
             dirY*=-1;
             score++;
-            msBallSpeed=msBallSpeed/2;
+            msBallSpeed=msBallSpeed-(msBallSpeed/10);
         }
 
         //Aggiornamento difficolta su score
