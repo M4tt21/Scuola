@@ -7,7 +7,8 @@ int main() {
     int dirY=-1;
     int newX;
     int newY;
-    clock_t 
+    int msTimer, msTrigger;
+    clock_t start, tDiff;
 
     //inizializzazioni ncurses
     initscr();
@@ -82,30 +83,36 @@ int main() {
             dirY*=-1;
 
 
-        //Gestione movimento giocatore 
-        timeout(0);
-        switch (getch())
-        {
-        case KEY_RIGHT:
-            if(bar.c.x<screenMax.x-bar.l)
-                bar.c.x+=BAR_SPEED; 
-            else
-                beep();
-            break;
-
-        case KEY_LEFT:
-            if(bar.c.x>0)
-                bar.c.x-=BAR_SPEED;
-            else
-                beep();
-            break;
         
-        case 113:
-            clear();
-            endwin();
-            exit(0);
-        }
-    }while(true);
+        //timer per il frame
+        start=clock();
+        do{
+            //Gestione movimento giocatore 
+            timeout(0);
+            switch (getch())
+            {
+            case KEY_RIGHT:
+                if(bar.c.x<screenMax.x-bar.l)
+                    bar.c.x+=BAR_SPEED; 
+                else
+                    beep();
+                break;
 
+            case KEY_LEFT:
+                if(bar.c.x>0)
+                    bar.c.x-=BAR_SPEED;
+                else
+                    beep();
+                break;
+            
+            case 113:
+                clear();
+                endwin();
+                exit(0);
+            }
+            tDiff=clock()-start;
+            msTimer=tDiff * 1000 / CLOCKS_PER_SEC;
+        }while(msTimer<msTrigger);
+    }while(true);
 }
 
