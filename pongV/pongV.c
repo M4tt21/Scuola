@@ -9,7 +9,7 @@ int main() {
     int newY;
     int msTimer, msBallSpeed=FRAME_SPEED_MS;
     int score;
-    int lives=STARTING_LIVES;
+    int lives;
     clock_t start, tDiff;
 
     //inizializzazioni ncurses
@@ -52,6 +52,7 @@ int main() {
 
             //Reset Score
             score=0;
+            lives=STARTING_LIVES;
 
             do{
 
