@@ -8,7 +8,7 @@
 
 #define BAR_DISTANCE 2
 #define BAR_SPEED 4
-#define FRAME_SPEED_MS 500
+#define FRAME_SPEED_MS 200
 
 
 typedef struct{

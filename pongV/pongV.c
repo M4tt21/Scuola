@@ -113,6 +113,11 @@ int main() {
             }
             tDiff=clock()-start;
             msTimer=tDiff * 1000 / CLOCKS_PER_SEC;
+            //Print barra
+            attron(COLOR_PAIR(1));
+            mvprintw(bar.c.y, bar.c.x, bar.s);
+            //Refresh per visualizzare
+            refresh();
         }while(msTimer<FRAME_SPEED_MS);
     }while(true);
 }
