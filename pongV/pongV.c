@@ -85,6 +85,7 @@ int main() {
 
         
         //timer per il frame
+        fflush(stdin);
         start=clock();
         do{
             //Gestione movimento giocatore 
@@ -92,14 +93,14 @@ int main() {
             switch (getch())
             {
             case KEY_RIGHT:
-                if(bar.c.x<screenMax.x-bar.l)
+                if(bar.c.x<screenMax.x-bar.l-BAR_SPEED)
                     bar.c.x+=BAR_SPEED; 
                 else
                     beep();
                 break;
 
             case KEY_LEFT:
-                if(bar.c.x>0)
+                if(bar.c.x>0+BAR_SPEED)
                     bar.c.x-=BAR_SPEED;
                 else
                     beep();
