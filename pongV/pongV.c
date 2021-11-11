@@ -61,12 +61,12 @@ int main() {
         newY=ball.c.y+dirY;
         
         //Gestione Rimbalzo palla
-        if(newX<0 || (newX+ball.l)>=screenMax.x)    
+        if(newX<=0 || (newX+ball.l)>=screenMax.x)    
             dirX*=-1;
         else
             ball.c.x+=dirX;
 
-        if(newY<0)    
+        if(newY<=0)    
             dirY*=-1;
         else if(newY>=screenMax.y){
             clear();
