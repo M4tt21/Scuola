@@ -64,8 +64,11 @@ int main() {
 
         if(newY<0)    
             dirY*=-1;
-        else if(newY>=screenMax.y)
+        else if(newY>=screenMax.y){
+            clear();
+            endwin();
             break;
+        }
         else
             ball.c.y+=dirY;
 
@@ -91,9 +94,11 @@ int main() {
             break;
         
         case 113:
+            clear();
             endwin();
             exit(0);
         }
     }while(true);
+
 }
 
