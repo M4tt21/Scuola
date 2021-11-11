@@ -4,14 +4,13 @@ int main() {
     //Inizializzazione Variabili
     coords screenMax;
     int dirX;
-    int dirY=-1;
+    int dirY;
     int newX;
     int newY;
     int msTimer, msBallSpeed=FRAME_SPEED_MS;
-    int score=0;
+    int score;
     int lives=STARTING_LIVES;
     clock_t start, tDiff;
-    char sLives[STARTING_LIVES];
 
     //inizializzazioni ncurses
     initscr();
@@ -41,6 +40,7 @@ int main() {
             ball.c.y=(screenMax.y/2);
             ball.c.x= rand() % screenMax.x;
 
+            dirY=-1;
             if(rngBool())
                 dirX=ball.l*(-1);
             else
@@ -50,21 +50,18 @@ int main() {
             bar.c.y=screenMax.y-BAR_DISTANCE;
             bar.c.x=((screenMax.x-(bar.l/2))/2) & ~1; 
 
-            //Format lives
-            int i;
-            for(i=0; i++; i<lives)
-                strcpy(sLives, "\3"); 
-            strcpy(sLives, "\0"); 
+            //Reset Score
+            score=0;
 
             do{
 
                 clear();
                 //Print score
                 attron(COLOR_PAIR(4));
-                mvprintw(1,2,"%d",score);
+                mvprintw(1,2,"Score: [%d]",score);
                 //Print vite
                 attron(COLOR_PAIR(4));
-                mvprintw(1,screenMax.x-lives-2,sLives);
+                mvprintw(1,screenMax.x-lives-2, "Lives: [%d]", lives);
                 //Print palla
                 attron(COLOR_PAIR(2));
                 mvprintw(ball.c.y, ball.c.x, ball.s);
