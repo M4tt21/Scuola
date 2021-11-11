@@ -14,8 +14,7 @@ int main() {
     while(true) {
         clear();
         timeout(1); /* Non attende il tasto invio */
-        char c=getch();
-        mvaddch(y,x, getch());
+        addch(getch());
         refresh();
         usleep(40000);
     }
