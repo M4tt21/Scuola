@@ -13,15 +13,10 @@ int main() {
     int x = maxx/2, y = maxy/2;  /* Centro dello schermo */
     while(true) {
         clear();
-        mvprintw(y, x, "\51");
+        timeout(1); /* Non attende il tasto invio */
+        mvprintw(y,x,getch());
         refresh();
         usleep(40000);
-        newx = x + direzione;
-        /* Inverte la direzione del movimento toccando il bordo */
-        if(newx >= maxx || newx < 0) direzione*= -1;
-        else x+= direzione;
-        timeout(1); /* Non attende il tasto invio */
-        if(getch() == 113) break; /* Esce alla pressione del tasto 'q' */
     }
     endwin();
 }
