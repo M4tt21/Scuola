@@ -25,7 +25,7 @@ int main() {
     //Gestione Schermo
     
     //Spawn palla
-    ball.c.y=screenMax.y/2;
+    ball.c.y=(screenMax.y/2)-1;
     ball.c.x= rand() % screenMax.x;
 
     if(rngBool())
@@ -66,7 +66,7 @@ int main() {
         else
             ball.c.x+=dirX;
 
-        if(newY<=0)    
+        if(newY<0)    
             dirY*=-1;
         else if(newY>=screenMax.y){
             clear();
