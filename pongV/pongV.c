@@ -45,7 +45,7 @@ int main() {
     attron(COLOR_PAIR(1));
 
     do{
-        usleep(100000);
+        //usleep(100000);
 
         clear();
         //Print palla
@@ -93,14 +93,14 @@ int main() {
             switch (getch())
             {
             case KEY_RIGHT:
-                if(bar.c.x<screenMax.x-bar.l-BAR_SPEED)
+                if(bar.c.x<=screenMax.x-bar.l-BAR_SPEED)
                     bar.c.x+=BAR_SPEED; 
                 else
                     beep();
                 break;
 
             case KEY_LEFT:
-                if(bar.c.x>0+BAR_SPEED)
+                if(bar.c.x>=0+BAR_SPEED)
                     bar.c.x-=BAR_SPEED;
                 else
                     beep();
