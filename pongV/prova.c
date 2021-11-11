@@ -10,10 +10,11 @@ int main() {
     noecho();
     cbreak();
     set_escdelay(0);
+    clock_t t=clock();
     while (1)
     {
-        printw("%c", getch());
-        printw("|");
+        usleep(10000);
+        printw("%f", t);
         refresh();
     }
     return 0;
