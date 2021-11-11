@@ -25,7 +25,7 @@ int main() {
     //Gestione Schermo
     
     //Spawn palla
-    ball.c.y=(screenMax.y/2)-1;
+    ball.c.y=(screenMax.y/2);
     ball.c.x= rand() % screenMax.x;
 
     if(rngBool())
@@ -43,7 +43,7 @@ int main() {
     attron(COLOR_PAIR(1));
 
     do{
-        usleep(500000);
+        usleep(1000000);
 
         clear();
         //Print palla
