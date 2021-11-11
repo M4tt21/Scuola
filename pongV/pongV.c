@@ -73,7 +73,11 @@ int main() {
         else
             ball.c.y+=dirY;
 
-        
+        //Gestione Collisione Palla Barra
+        if((newY==bar.c.y) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
+            dirY*=-1;
+        else
+            ball.c.y+=dirY;
 
 
         //Gestione movimento giocatore 
