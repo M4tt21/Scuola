@@ -21,7 +21,7 @@ palla1.x=0; palla1.y=maxy;
 palla2.x=maxx; palla2.y=maxy;
 while(true) {
   clear();
-  mvprintw(palla1.y, palla1.x, "o");
+  mvprintw(palla1.y, palla1.x-1, "o");
   mvprintw(palla2.y-1, palla2.x, "O");
   refresh();
   usleep(40000);
