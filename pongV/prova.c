@@ -9,8 +9,10 @@ int main() {
     initscr();
     noecho();
     cbreak();
+    bool held=false;
     while (1)
     {
+        timeout(0);
         printw("%c", getch());
         refresh();
     }
