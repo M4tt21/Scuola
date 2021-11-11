@@ -61,7 +61,7 @@ int main() {
                 clear();
                 //Print score
                 attron(COLOR_PAIR(4));
-                mvprintw(1,2,score);
+                mvprintw(1,2,"%d",score);
                 //Print vite
                 attron(COLOR_PAIR(4));
                 mvprintw(1,screenMax.x-lives-2,sLives);
