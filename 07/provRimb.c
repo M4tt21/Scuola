@@ -22,7 +22,7 @@ palla2.x=maxx; palla2.y=maxy;
 while(true) {
   clear();
   mvprintw(palla1.y, palla1.x, "o");
-  mvprintw(palla2.y, palla2.x, "O");
+  mvprintw(palla2.y, palla2.x-1, "O");
   refresh();
   usleep(10000);
   newx1 = palla1.x + direzionex1; newy1 = palla1.y + direzioney1;
