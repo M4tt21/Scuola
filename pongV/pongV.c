@@ -43,7 +43,7 @@ int main() {
     attron(COLOR_PAIR(1));
 
     do{
-        usleep(1000000);
+        usleep(500000);
 
         clear();
         //Print palla
@@ -61,7 +61,7 @@ int main() {
         newY=ball.c.y+dirY;
         
         //Gestione Rimbalzo palla
-        if(newX<=0 || (newX+ball.l)>=screenMax.x)    
+        if(newX<0 || (newX+ball.l)>=screenMax.x)    
             dirX*=-1;
         else
             ball.c.x+=dirX;
