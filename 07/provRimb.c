@@ -22,9 +22,9 @@ palla2.x=maxx; palla2.y=maxy;
 while(true) {
   clear();
   mvprintw(palla1.y, palla1.x-1, "o");
-  mvprintw(palla2.y-1, palla2.x, "O");
+  mvprintw(palla2.y-1, palla2.x-1, "O");
   refresh();
-  usleep(40000);
+  usleep(0);
   newx1 = palla1.x + direzionex1; newy1 = palla1.y + direzioney1;
   newx2 = palla2.x + direzionex2; newy2 = palla2.y + direzioney2;
   /* Verifica collisione bordi ­ Oggetto 1 */
@@ -39,7 +39,7 @@ while(true) {
   else palla2.y += direzioney2;
   /* Verifica collisione tra Oggetto 1 e 2 */
   if(palla1.x == palla2.x && palla1.y == palla2.y) {flash(); break;}
-  timeout(1); 
+  timeout(0); 
   if(getch() == 113) break;
   }
 endwin();
