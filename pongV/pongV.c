@@ -37,7 +37,7 @@ int main() {
 
     //Spawn barra
     bar.c.y=screenMax.y-BAR_DISTANCE;
-    bar.c.x=((screenMax.x-(bar.l/2))/2) & !1;
+    bar.c.x=((screenMax.x-(bar.l/2))/2) & ~1;
 
     //Colori
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
