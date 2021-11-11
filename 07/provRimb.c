@@ -24,7 +24,7 @@ while(true) {
   mvprintw(palla1.y, palla1.x-1, "o");
   mvprintw(palla2.y-1, palla2.x-1, "O");
   refresh();
-  usleep(0);
+  usleep(100000);
   newx1 = palla1.x + direzionex1; newy1 = palla1.y + direzioney1;
   newx2 = palla2.x + direzionex2; newy2 = palla2.y + direzioney2;
   /* Verifica collisione bordi ­ Oggetto 1 */
