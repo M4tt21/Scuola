@@ -13,6 +13,7 @@ int main() {
     while (1)
     {
         printw("%c", getch());
+        printw("|");
         refresh();
     }
     return 0;
