@@ -9,12 +9,9 @@ int main() {
     initscr();
     noecho();
     cbreak();
-    bool held=false;
+    set_escdelay(0);
     while (1)
     {
-        usleep(10);
-        
-        timeout(0);
         printw("%c", getch());
         refresh();
     }
