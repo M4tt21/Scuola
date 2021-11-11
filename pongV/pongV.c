@@ -13,6 +13,7 @@ int main() {
     noecho();
     cbreak();
     start_color();
+    keypad(stdscr, true);
     curs_set(0);
 
     //inizializzazioni rand
