@@ -63,7 +63,7 @@ int main() {
             ball.c.x+=dirX;
 
         if(newY<0)    
-            dirX*=-1;
+            dirY*=-1;
         else if(newY>=screenMax.y)
             break;
         else
