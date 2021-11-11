@@ -11,16 +11,18 @@ int main() {
     //inizializzazioni ncurses
     initscr();
     noecho();
+    cbreak();
+    start_color();
     curs_set(0);
 
     //inizializzazioni rand
     srand(time(NULL)); 
 
-    //Gestione Schermo
-
     //Rilevamento Schermo
     getmaxyx(stdscr, screenMax.y, screenMax.x); 
-
+    
+    //Gestione Schermo
+    
     //Spawn palla
     ball.c.y=screenMax.y/2;
     ball.c.x= rand() % screenMax.x;
@@ -33,6 +35,10 @@ int main() {
     //Spawn barra
     bar.c.y=screenMax.y-BAR_DISTANCE;
     bar.c.x=((screenMax.x-(bar.l/2))/2)-1;
+
+    //Colori
+    init_pair(1, COLOR_BLACK, COLOR_WHITE);
+    attron(COLOR_PAIR(1));
 
     do{
         usleep(10000);
