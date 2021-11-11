@@ -13,7 +13,7 @@ int main() {
     int x = maxx/2, y = maxy/2;  /* Centro dello schermo */
     while(true) {
         clear();
-        mvprintw(y, x, "%219%219");
+        mvprintw(y, x, "\219\219");
         refresh();
         usleep(40000);
         newx = x + direzione;
