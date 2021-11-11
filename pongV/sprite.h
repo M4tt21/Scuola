@@ -4,11 +4,13 @@
 #include <stdbool.h>
 #include <time.h>
 #include <stdlib.h>
+#include <string.h>
 
 
 #define BAR_DISTANCE 3
 #define BAR_SPEED 2
 #define FRAME_SPEED_MS 120
+#define STARTING_LIVES 3
 
 
 typedef struct{
