@@ -7,7 +7,8 @@ int main() {
     int dirY=-1;
     int newX;
     int newY;
-    int msTimer;
+    int msTimer, msBallSpeed=FRAME_SPEED_MS;
+    int score=0;
     clock_t start, tDiff;
 
     //inizializzazioni ncurses
@@ -43,11 +44,15 @@ int main() {
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
     init_pair(2, COLOR_BLACK, COLOR_RED);
     init_pair(3, COLOR_BLACK, COLOR_BLACK);
+    init_pair(4, COLOR_BLUE, COLOR_BLACK);
     
     do{
         //usleep(100000);
 
         clear();
+        //Print score
+        attron(COLOR_PAIR(4));
+        mvprintw(1,1,"%d",score);
         //Print palla
         attron(COLOR_PAIR(2));
         mvprintw(ball.c.y, ball.c.x, ball.s);
@@ -79,10 +84,13 @@ int main() {
             ball.c.y+=dirY;
 
         //Gestione Collisione Palla Barra
-        if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l))
+        if((newY==bar.c.y-1) && (newX>=bar.c.x && newX<=bar.c.x+bar.l)){
             dirY*=-1;
+            score++;
+        }
 
-
+        //Aggiornamento difficolta su score
+        msBallSpeed=(msBallSpeed/100)*110;
         
         //timer per il frame
         fflush(stdin);
@@ -121,7 +129,7 @@ int main() {
             mvprintw(bar.c.y, bar.c.x, bar.s);
             //Refresh per visualizzare
             refresh();
-        }while(msTimer<FRAME_SPEED_MS);
+        }while(msTimer<msBallSpeed);
     }while(true);
 }
 
