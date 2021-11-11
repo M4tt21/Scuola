@@ -14,7 +14,9 @@ int main() {
     while (1)
     {
         sleep(1);
-        printw("%f\n", clock()-t);
+        clock_t difference = clock() - t;
+        int msec = difference * 1000 / CLOCKS_PER_SEC;
+        printw("%i\n", msec);
         refresh();
     }
     return 0;
