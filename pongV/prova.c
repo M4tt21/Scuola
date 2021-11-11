@@ -6,7 +6,7 @@
 int main() {
     while (1)
     {
-        printf("%c", getch());
+        printf("%c", getchar());
     }
     return 0;
 }
