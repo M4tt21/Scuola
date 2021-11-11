@@ -23,9 +23,15 @@ while(true) {
         newx = x + direzionex;
         newy = y + direzioney;
         /* Inverte la direzione del movimento toccando il bordo */
-        if(newx >= maxx || newx < 0) direzionex*= -1;
+        if(newx >= maxx || newx < 0){ 
+            direzionex*= -1;
+            flash();
+        }
         else x+= direzionex;
-        if(newy >= maxy || newy < 0) direzioney*= -1;
+        if(newy >= maxy || newy < 0){ 
+            direzioney*= -1;
+            flash();
+        }
         else y+= direzioney;
         timeout(1); /* Non attende il tasto invio */
         if(getch() == 113) break; /* Esce alla pressione del tasto 'q' */
