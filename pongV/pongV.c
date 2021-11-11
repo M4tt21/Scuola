@@ -42,6 +42,7 @@ int main() {
     //Colori
     init_pair(1, COLOR_BLACK, COLOR_WHITE);
     init_pair(2, COLOR_BLACK, COLOR_RED);
+    init_pair(3, COLOR_BLACK, COLOR_BLACK);
     attron(COLOR_PAIR(1));
 
     do{
@@ -93,6 +94,8 @@ int main() {
             switch (getch())
             {
             case KEY_RIGHT:
+                attron(COLOR_PAIR(3));
+                mvprintw(bar.c.y, bar.c.x, bar.s);
                 if(bar.c.x<=screenMax.x-bar.l-BAR_SPEED)
                     bar.c.x+=BAR_SPEED; 
                 else
@@ -100,6 +103,8 @@ int main() {
                 break;
 
             case KEY_LEFT:
+                attron(COLOR_PAIR(3));
+                mvprintw(bar.c.y, bar.c.x, bar.s);
                 if(bar.c.x>=0+BAR_SPEED)
                     bar.c.x-=BAR_SPEED;
                 else
@@ -113,11 +118,6 @@ int main() {
             }
             tDiff=clock()-start;
             msTimer=tDiff * 1000 / CLOCKS_PER_SEC;
-            clear();
-            //Print palla
-            attron(COLOR_PAIR(2));
-            mvprintw(ball.c.y, ball.c.x, ball.s);
-            //Print barra
             attron(COLOR_PAIR(1));
             mvprintw(bar.c.y, bar.c.x, bar.s);
             //Refresh per visualizzare
