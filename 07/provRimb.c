@@ -22,9 +22,9 @@ palla2.x=maxx; palla2.y=maxy;
 while(true) {
   clear();
   mvprintw(palla1.y, palla1.x, "o");
-  mvprintw(palla2.y, palla2.x-1, "O");
+  mvprintw(palla2.y-1, palla2.x, "O");
   refresh();
-  usleep(10000);
+  usleep(40000);
   newx1 = palla1.x + direzionex1; newy1 = palla1.y + direzioney1;
   newx2 = palla2.x + direzionex2; newy2 = palla2.y + direzioney2;
   /* Verifica collisione bordi ­ Oggetto 1 */
