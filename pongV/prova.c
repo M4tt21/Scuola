@@ -14,7 +14,7 @@ int main() {
     while (1)
     {
         usleep(10000);
-        printw("%f", t);
+        printw("%f", clock()-t);
         refresh();
     }
     return 0;
