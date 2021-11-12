@@ -154,5 +154,8 @@ int main() {
             c=getch();
         }while (c!=121 && c!=113 && c!=27 && c!=121 && c!=110);
     }while(c==121);
+    clear();
+    endwin();
+    return 0;
 }
 
