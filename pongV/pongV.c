@@ -7,7 +7,7 @@ int main() {
     int dirY;
     int newX;
     int newY;
-    int msTimer, msBallSpeed=FRAME_SPEED_MS;
+    int msTimer, msBallSpeed;
     int score;
     int lives;
     char c;
@@ -37,6 +37,7 @@ int main() {
     init_pair(4, COLOR_BLUE, COLOR_BLACK);
     do{
         lives=STARTING_LIVES;
+        msBallSpeed=FRAME_SPEED_MS;
         do{
             //Spawn palla
             ball.c.y=(screenMax.y/2);
