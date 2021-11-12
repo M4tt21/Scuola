@@ -10,6 +10,7 @@ int main() {
     int msTimer, msBallSpeed=FRAME_SPEED_MS;
     int score;
     int lives;
+    char c;
     clock_t start, tDiff;
 
     //inizializzazioni ncurses
@@ -148,7 +149,10 @@ int main() {
         clear();
         mvprintw(screenMax.y/2,screenMax.x/2,"FUCK YOU!");
         mvprintw(screenMax.y/2+1,screenMax.x/2,"Vuoi rigiocare[y|n]?");
-        timeout(-1);
-    }while(getch()==121);
+        do{
+            timeout(-1);
+            c=getch();
+        }while (c!=121 && c!=113 && c!=27 && c!=121 && c!=110);
+    }while(c==121);
 }
 
