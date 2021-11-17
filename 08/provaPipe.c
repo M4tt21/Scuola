@@ -36,7 +36,6 @@ main() {
                 read(p[0], inbuf, MSGSIZE);
                 printf("%s\n", inbuf);
             }
-        wait(NULL);
     }
     _exit(0);
 }
