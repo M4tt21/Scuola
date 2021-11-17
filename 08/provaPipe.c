@@ -4,9 +4,9 @@
 #include <sys/types.h> 
 #include <sys/wait.h>
 #define MSGSIZE 16
-char *msg1="hello, world #1";
-char *msg2="hello, world #2";
-char *msg3="hello, world #3";
+char msg1[MSGSIZE]="hello, world #1";
+char msg2[MSGSIZE]="hello, world #2";
+char msg3[MSGSIZE]="hello, world #3";
 main() {
     char inbuf[MSGSIZE];
     int p[2], j;
@@ -21,7 +21,7 @@ main() {
             perror("fork call");
             _exit(2);
 
-        case 0: /* processo figlio */
+        case 100: /* processo figlio */
             close(p[0]); /* chiusura del descrittore di lettura */
             /*Leggi MSGSIZE byte dal buffer msg1 e scrivi su p[1]*/
             write(p[1], msg1, MSGSIZE);
