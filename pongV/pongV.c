@@ -103,9 +103,6 @@ int main() {
                     score++;
                     msBallSpeed=msBallSpeed-(msBallSpeed/10);
                 }
-
-                //Aggiornamento difficolta su score
-                
                 
                 //timer per il frame
                 fflush(stdin);
