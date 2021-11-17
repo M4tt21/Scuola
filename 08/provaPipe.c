@@ -21,7 +21,7 @@ main() {
             perror("fork call");
             _exit(2);
 
-        case 100: /* processo figlio */
+        case 0: /* processo figlio */
             close(p[0]); /* chiusura del descrittore di lettura */
             /*Leggi MSGSIZE byte dal buffer msg1 e scrivi su p[1]*/
             write(p[1], msg1, MSGSIZE);
