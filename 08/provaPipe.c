@@ -22,18 +22,18 @@ main() {
             _exit(2);
 
         case 0: /* processo figlio */
-            close(p[0]); /* chiusura del descrittore di lettura */
+            close(p[1]); /* chiusura del descrittore di lettura */
             /*Leggi MSGSIZE byte dal buffer msg1 e scrivi su p[1]*/
-            write(p[1], msg1, MSGSIZE);
-            write(p[1], msg2, MSGSIZE);
-            write(p[1], msg3, MSGSIZE);
+            write(p[0], msg1, MSGSIZE);
+            write(p[0], msg2, MSGSIZE);
+            write(p[0], msg3, MSGSIZE);
             break;
 
         default: /* processo padre */
-            close(p[1]); /* chiusura del descrittore di scrittura */
+            close(p[0]); /* chiusura del descrittore di scrittura */
             for(j=0; j<3; j++) {
                 /*Leggi MSGSIZE byte da p[0] e scrivi sul buffer inbuf*/
-                read(p[0], inbuf, MSGSIZE);
+                read(p[1], inbuf, MSGSIZE);
                 printf("%s\n", inbuf);
             }
     }
