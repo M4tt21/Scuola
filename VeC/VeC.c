@@ -26,6 +26,7 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(local_win);
+    height=width;
     getch();
     endwin();
 /*  noecho();
