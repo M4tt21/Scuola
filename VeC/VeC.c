@@ -27,13 +27,11 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(local_win);
-    getch();
-    getch();
-    getch();
-    getch();
-    getch();
-    getch();
-    getch();
+    do
+    {
+        /* code */
+    } while (1);
+    
 
     endwin();
 /*  noecho();
