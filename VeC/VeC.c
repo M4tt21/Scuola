@@ -4,13 +4,13 @@ void vespa(int pipeout);
 void contadino(int pipeout);
 void AreaGioco(int pipein);
 void print_ui(void);
-void kill_p(WINDOWS *w, int p1,int p2);
+void kill_p(WINDOW *w, int p1,int p2);
 
 int main(){
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
-    WINDOWS *w;
+    WINDOW *w;
 
     //lncurses e rand setup
     initscr();
@@ -81,7 +81,7 @@ int main(){
     return 0;
 }
 
-void kill_p(WINDOWS *w, int p1,int p2){
+void kill_p(WINDOW *w, int p1,int p2){
     kill(p1,1);
     kill(p2,1);
     endwin();
