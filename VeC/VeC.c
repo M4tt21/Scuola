@@ -25,7 +25,7 @@ int main(){
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
     attron(COLOR_PAIR(1));
-    border(' ',' ',' ',' ',' ',' ',' ',' ');
+    border('  ','  ',' ',' ',' ',' ',' ',' ');
     refresh();
     print_ui();
 
@@ -98,5 +98,5 @@ void print_ui(){
 }
 
 void AreaGioco(int pipein){
-    
+
 }
