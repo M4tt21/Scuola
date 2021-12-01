@@ -27,7 +27,8 @@ int main(){
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
     wattron(w, COLOR_PAIR(1));
-    wborder(w,'X','X','X','X','X','X','X','X');
+    //wborder(w,'X','X','X','X','X','X','X','X');
+    box(w, 0, 0);
     wrefresh(w);
     print_ui();
 
