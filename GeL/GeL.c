@@ -23,7 +23,7 @@ void guardia(int pipeout);
 void controllo(int pipein);
 long int RNG(){return rand();};
 
-int main(){   
+int main(){
     int filedes[2];
     int pid_guardia;
     int pid_ladro;
@@ -32,7 +32,6 @@ int main(){
     initscr();
     noecho();
     keypad(stdscr, true);
-    resizeterm(MAXY, MAXX);
     srand((int)time(0));
     curs_set(0);
 
@@ -99,7 +98,7 @@ void ladro(int pipeout){
         else
             dx=-PASSO;
 
-        if(pos_ladro.x+dx<1 || pos_ladro.x+dx>=MAXX) dx=-dx;
+        if(!(pos_ladro.x+dx>0 && pos_ladro.x+dx<MAXX)) dx=-dx;
 
         pos_ladro.x+=dx;
 
@@ -108,7 +107,7 @@ void ladro(int pipeout){
         else
             dy=-PASSO;
 
-        if(pos_ladro.y+dy<1 || pos_ladro.y+dy>=MAXX) dy=-dy;
+        if(!(pos_ladro.y+dy>0 && pos_ladro.y+dy<MAXX)) dy=-dy;
 
         pos_ladro.y+=dy;
 
