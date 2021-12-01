@@ -14,7 +14,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    w=newwin(MAXY,MAXX,10,10);
+    w=newwin(MAXY,MAXX,0,0);
     noecho();
     start_color();
     keypad(stdscr, true);
@@ -27,7 +27,7 @@ int main(){
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
     wattron(w, COLOR_PAIR(1));
-    wborder(w, ' ',' ',' ',' ',' ',' ',' ',' ');
+    wborder(w,219,' ',' ',' ',' ',' ',' ',' ');
     wrefresh(w);
     print_ui();
 
