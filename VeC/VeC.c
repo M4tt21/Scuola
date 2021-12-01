@@ -26,6 +26,7 @@ int main(){
 
     attron(COLOR_PAIR(1));
     border(' ',' ',' ',' ',' ',' ',' ',' ');
+    refresh();
     print_ui();
 
     if(pipe(filedes)==-1){
@@ -93,5 +94,9 @@ void contadino(int pipeout){
 }
 
 void print_ui(){
+    
+}
+
+void AreaGioco(int pipein){
     
 }
