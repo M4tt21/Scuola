@@ -31,7 +31,14 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(w);
-    wrefresh(w);wrefresh(w);wrefresh(w);
+    box(w, 0 , 0);	
+    box(w, 0 , 0);	
+    wrefresh(w);
+    box(w, 0 , 0);	
+    wrefresh(w);
+    box(w, 0 , 0);	
+    box(w, 0 , 0);	
+    wrefresh(w);
     getch();
 
     //w=newwin(10,10,0,0);
