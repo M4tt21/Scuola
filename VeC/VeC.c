@@ -20,8 +20,8 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(w);
-
-
+    getch();
+    endwin();
 /*  noecho();
     //start_color();
     keypad(stdscr, true);
