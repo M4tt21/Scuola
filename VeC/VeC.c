@@ -25,6 +25,14 @@ int main(){
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
+
+    w = newwin(10, 10, 10, 10);
+	box(w, 0 , 0);		/* 0, 0 gives default characters 
+					 * for the vertical and horizontal
+					 * lines			*/
+	wrefresh(w);
+    getch();
+
     w=newwin(10,10,0,0);
     //wattron(w, COLOR_PAIR(1));
     //wborder(w,'X','X','X','X','X','X','X','X');
