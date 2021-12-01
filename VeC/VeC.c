@@ -16,7 +16,7 @@ int main(){
     initscr();
     WINDOW *local_win;
 
-	local_win = newwin(height, width, starty, startx);
+	local_win = newwin(20, 40, 0, 0);
 	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
