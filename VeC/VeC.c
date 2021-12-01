@@ -4,15 +4,17 @@ void vespa(int pipeout);
 void contadino(int pipeout);
 void AreaGioco(int pipein);
 void print_ui(void);
-void kill_p(int p1,int p2);
+void kill_p(WINDOWS *w, int p1,int p2);
 
 int main(){
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
+    WINDOWS *w;
 
     //lncurses e rand setup
     initscr();
+    w=newwin(MAXY,MAXX,10,10);
     noecho();
     start_color();
     keypad(stdscr, true);
@@ -24,9 +26,9 @@ int main(){
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
-    attron(COLOR_PAIR(1));
-    border('  ','  ',' ',' ',' ',' ',' ',' ');
-    refresh();
+    wattron(w, COLOR_PAIR(1));
+    wborder_set(w, '  ','  ',' ',' ',' ',' ',' ',' ');
+    wrefresh();
     print_ui();
 
     if(pipe(filedes)==-1){
@@ -75,14 +77,15 @@ int main(){
 
     getch();
 
-    kill_p(pid_vespa,pid_contadino);
+    kill_p(w, pid_vespa,pid_contadino);
     return 0;
 }
 
-void kill_p(int p1,int p2){
+void kill_p(WINDOWS *w, int p1,int p2){
     kill(p1,1);
     kill(p2,1);
     endwin();
+    delwin(w);
 }
 
 void vespa(int pipeout){
@@ -98,5 +101,5 @@ void print_ui(){
 }
 
 void AreaGioco(int pipein){
-
+    
 }

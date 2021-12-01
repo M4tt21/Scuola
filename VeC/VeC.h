@@ -10,8 +10,8 @@
 #define UI_HEIGHT 3
 #define BORDER 1
 
-#define MAXX 80
-#define MAXY (24+UI_HEIGHT)
+#define MAXX (80+(BORDER*2))
+#define MAXY (24+UI_HEIGHT+BORDER)
 #define PASSO 1
 #define VEL_VESPA 100000
 
