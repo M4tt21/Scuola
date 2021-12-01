@@ -17,6 +17,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
+    cbreak();
 
     WINDOW *local_win;
 
