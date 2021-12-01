@@ -10,11 +10,11 @@ int main(){
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
-    WINDOW *w;
+    
 
     //lncurses e rand setup
     initscr();
-
+    WINDOW *w;
 	w = newwin(20, 40, 0, 0);
 	box(w, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
