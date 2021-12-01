@@ -29,7 +29,7 @@ int main(){
     do{
         
     }while(1);
-    
+    getch();
 
     endwin();
 /*  noecho();
