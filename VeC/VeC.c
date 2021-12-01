@@ -14,23 +14,29 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    
-    noecho();
+    WINDOW *local_win;
+
+	local_win = newwin(height, width, starty, startx);
+	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
+					 * for the vertical and horizontal
+					 * lines			*/
+	wrefresh(local_win);
+
+
+/*  noecho();
     //start_color();
     keypad(stdscr, true);
     srand((int)time(0));
     curs_set(0);
 
-    init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
+  init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
     w = newwin(10, 10, 0, 0);
     w = newwin(10, 10, 10, 10);
-	box(w, 0 , 0);		/* 0, 0 gives default characters 
-					 * for the vertical and horizontal
-					 * lines			*/
+	box(w, 0 , 0);		
 	wrefresh(w);
     box(w, 0 , 0);	
     box(w, 0 , 0);	
@@ -95,8 +101,8 @@ int main(){
 
     getch();
 
-    kill_p(w, pid_vespa,pid_contadino);
-    return 0;
+    kill_p(w, pid_vespa,pid_contadino);*/
+    return 0; 
 }
 
 void kill_p(WINDOW *w, int p1,int p2){
