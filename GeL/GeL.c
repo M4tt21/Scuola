@@ -118,14 +118,13 @@ void ladro(int pipeout){
 
 void guardia(int pipeout){
     pos pos_guardia;
-    char c;
     pos_guardia.c='#';
     pos_guardia.x=MAXX-1;
     pos_guardia.y=MAXY-1;
     do{
         write(pipeout, &pos_guardia, sizeof(pos_guardia));
 
-        switch (c=getch())
+        switch (getch())
         {
         case KEY_UP:
             if (pos_guardia.y>0)
@@ -157,14 +156,14 @@ void controllo(int pipein){
         read(pipein, &rbuffer, sizeof(rbuffer));
 
         if(rbuffer.c=='$'){
-            pos_ladro=rbuffer;
             if(pos_ladro.x!=rbuffer.x || pos_ladro.y!=rbuffer.y)
                 mvaddch(pos_ladro.y,pos_ladro.x,' ');
+            pos_ladro=rbuffer;
         }
         else{
-            pos_guardia=rbuffer;
             if(pos_guardia.x!=rbuffer.x || pos_guardia.y!=rbuffer.y)
                 mvaddch(pos_guardia.y,pos_guardia.x,' ');
+            pos_guardia=rbuffer;
         }
 
         mvaddch(rbuffer.y,rbuffer.x,rbuffer.c);
