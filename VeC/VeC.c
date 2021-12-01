@@ -6,18 +6,6 @@ void AreaGioco(int pipein);
 void print_ui(void);
 void kill_p(WINDOW *w, int p1,int p2);
 
-WINDOW *create_newwin(int height, int width, int starty, int startx)
-{	WINDOW *local_win;
-
-	local_win = newwin(height, width, starty, startx);
-	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
-					 * for the vertical and horizontal
-					 * lines			*/
-	wrefresh(local_win);		/* Show that box 		*/
-
-	return local_win;
-}
-
 int main(){
     int filedes[2];
     int pid_vespa;
@@ -26,7 +14,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    
+    w=newwin(MAXY,MAXX,0,0);
     noecho();
     start_color();
     keypad(stdscr, true);
@@ -38,8 +26,6 @@ int main(){
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
-    w=create_newwin(10,10,0,0);
-    getch();
     wattron(w, COLOR_PAIR(1));
     //wborder(w,'X','X','X','X','X','X','X','X');
     box(w, 0, 0);
