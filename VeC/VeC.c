@@ -27,6 +27,12 @@ int main(){
 					 * lines			*/
 	wrefresh(local_win);
     getch();
+    getch();
+    getch();
+    getch();
+    getch();
+    getch();
+    getch();
 
     endwin();
 /*  noecho();
