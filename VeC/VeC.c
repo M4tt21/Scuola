@@ -10,17 +10,21 @@ int main(){
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
+
+    int height, width, starty, startx;
+    height=width=starty=startx=10;
     
 
     //lncurses e rand setup
     initscr();
 
-    WINDOW *win;
-	win = newwin(20, 40, 0, 0);
-	box(win, 0 , 0);		/* 0, 0 gives default characters 
+    WINDOW *local_win;
+
+	local_win = newwin(height, width, starty, startx);
+	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
-	wrefresh(win);
+	wrefresh(local_win);
     getch();
     endwin();
 /*  noecho();
