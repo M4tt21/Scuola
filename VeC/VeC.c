@@ -16,7 +16,7 @@ int main(){
     initscr();
     
     noecho();
-    start_color();
+    //start_color();
     keypad(stdscr, true);
     srand((int)time(0));
     curs_set(0);
@@ -26,7 +26,7 @@ int main(){
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
-    w = newwin(10, 10, 10, 10);
+    w = newwin(10, 10, 0, 0);
     w = newwin(10, 10, 10, 10);
 	box(w, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
