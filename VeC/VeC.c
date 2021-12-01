@@ -27,6 +27,7 @@ int main(){
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
 
     w = newwin(10, 10, 10, 10);
+    w = newwin(10, 10, 10, 10);
 	box(w, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
