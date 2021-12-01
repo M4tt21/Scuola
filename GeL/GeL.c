@@ -34,6 +34,7 @@ int main(){
     keypad(stdscr, true);
     srand((int)time(0));
     curs_set(0);
+    
 
     if(pipe(filedes)==-1){
         perror("pipe call");
