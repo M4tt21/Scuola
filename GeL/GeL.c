@@ -32,6 +32,7 @@ int main(){
     initscr();
     noecho();
     keypad(stdscr, true);
+    wresize(stdscr, MAXY, MAXX);
     srand((int)time(0));
     curs_set(0);
 
@@ -107,7 +108,7 @@ void ladro(int pipeout){
         else
             dy=-PASSO;
 
-        if(pos_ladro.y+dy<1 || pos_ladro.x+dy>=MAXX) dy=-dy;
+        if(pos_ladro.y+dy<1 || pos_ladro.y+dy>=MAXX) dy=-dy;
 
         pos_ladro.y+=dy;
 
