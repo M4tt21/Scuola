@@ -31,6 +31,7 @@ int main(){
     //lncurses e rand setup
     initscr();
     noecho();
+    keypad(stdscr, true);
     srand((int)time(0));
     curs_set(0);
 
