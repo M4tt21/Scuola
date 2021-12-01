@@ -26,9 +26,6 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(local_win);
-    do{
-        
-    }while(1);
     getch();
 
     endwin();
