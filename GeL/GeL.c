@@ -107,7 +107,7 @@ void ladro(int pipeout){
         else
             dy=-PASSO;
 
-        if(!(pos_ladro.y+dy>0 && pos_ladro.y+dy<MAXX)) dy=-dy;
+        if(!(pos_ladro.y+dy>0 && pos_ladro.y+dy<MAXY)) dy=-dy;
 
         pos_ladro.y+=dy;
 
