@@ -14,7 +14,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    w=newwin(MAXY,MAXX,0,0);
+    
     noecho();
     start_color();
     keypad(stdscr, true);
@@ -25,7 +25,7 @@ int main(){
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
-
+    w=newwin(MAXY,MAXX,0,0);
     wattron(w, COLOR_PAIR(1));
     //wborder(w,'X','X','X','X','X','X','X','X');
     box(w, 0, 0);
