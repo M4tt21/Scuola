@@ -32,7 +32,7 @@ int main(){
     initscr();
     noecho();
     keypad(stdscr, true);
-    wresize(stdscr, MAXY, MAXX);
+    resizeterm(MAXY, MAXX);
     srand((int)time(0));
     curs_set(0);
 
