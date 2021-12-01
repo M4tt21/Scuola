@@ -25,7 +25,7 @@ int main(){
 					 * for the vertical and horizontal
 					 * lines			*/
 	wrefresh(local_win);
-    sleep(100000);
+    getch();
     endwin();
 /*  noecho();
     //start_color();
