@@ -14,12 +14,13 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    WINDOW *w;
-	w = newwin(20, 40, 0, 0);
-	box(w, 0 , 0);		/* 0, 0 gives default characters 
+
+    WINDOW *win;
+	win = newwin(20, 40, 0, 0);
+	box(win, 0 , 0);		/* 0, 0 gives default characters 
 					 * for the vertical and horizontal
 					 * lines			*/
-	wrefresh(w);
+	wrefresh(win);
     getch();
     endwin();
 /*  noecho();
