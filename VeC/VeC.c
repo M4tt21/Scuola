@@ -43,9 +43,9 @@ int main(){
         gtemaxyx(ui,&i1,&i2);
         gtemaxyx(game,&g1,&g2);
 
-        mvwaddchstr(ui,1,1, "ui:%d|%d", i1,i2);
-        mvwaddchstr(ui,1,20, "ui:%d|%d", g1,g2);
-        mvwaddch(ui,1,1,'@');
+        mvwprintw(ui,1,1, "ui:%d|%d", i1,i2);
+        mvwprintw(ui,1,20, "ui:%d|%d", g1,g2);
+
         wrefresh(ui);
         wrefresh(game);
 
