@@ -25,12 +25,13 @@ int main(){
     keypad(input, true);
 
 
+    int i1,i2,g1,g2;
 
     
     
     do{
         //if(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2))
-            resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
+        resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
         //resizeterm(100,40);
 
         box(ui, 0 , 0);
@@ -39,6 +40,12 @@ int main(){
 
         wrefresh(ui);
         wrefresh(game);
+
+        gtemaxyx(ui,&i1,&i2);
+        gtemaxyx(game,&g1,&g2);
+
+        mvwaddchstr(ui,1,1, "ui:%d|%d", i1,i2);
+        mvwaddchstr(ui,1,20, "ui:%d|%d", g1,g2);
 
         usleep(100);
     } while (1);
