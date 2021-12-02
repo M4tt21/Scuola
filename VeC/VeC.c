@@ -55,6 +55,7 @@ int main(){
     }
 
     mvwprintw(ui,1,1,"WOOOW %c",getch());
+    wrefresh(ui);
     sleep(100);
 
     pid_vespa=fork();
