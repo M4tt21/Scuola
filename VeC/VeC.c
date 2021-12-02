@@ -38,8 +38,9 @@ int main(){
 
     do{
         timeout(0);
-        //mvwprintw(ui, 1,1,"Character: %c",getch());
+        mvwprintw(ui, 1,1,"Character: %c",wgetch(stdscr));
         wrefresh(ui);
+        refresh();
 
         usleep(100);
     }while(1);
