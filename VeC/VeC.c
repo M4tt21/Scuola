@@ -1,7 +1,18 @@
 #include "VeC.h"
 
 int main(){
-    int filedes[2];
+
+    initscr();
+    WINDOW *win=newwin(10,20,10,10);
+    refresh();
+    box(win,0,0);
+    wprintw(win,"this is my box");
+    wrefresh(win);
+
+    int c=getch();
+    endwin();
+    
+/*    int filedes[2];
     int pid_vespa;
     int pid_contadino;
     
@@ -57,7 +68,7 @@ int main(){
     
 
     endwin();
-/*  noecho();
+  noecho();
     //start_color();
     keypad(stdscr, true);
     srand((int)time(0));
