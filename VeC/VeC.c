@@ -14,7 +14,7 @@ int main(){
 
     WINDOW *ui, *game, *input;
 
-    input=newwin(0,0,10,10);
+    input=newwin(0,0,MAXX*2,MAXY*2);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
