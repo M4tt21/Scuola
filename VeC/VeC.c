@@ -49,7 +49,7 @@ int main(){
 
     do{
 
-        mvwprintw(ui, 1,1,"Character: %c",wgetch(input));
+        mvwprintw(ui, 1,1,"Character: %c",wgetch(stdscr));
         wrefresh(ui);
 
         usleep(100);
