@@ -48,7 +48,8 @@ int main(){
     wrefresh(game);
 
     do{
-
+        refresh();
+        wrefresh(ui);
         mvwprintw(ui, 1,1,"Character: %c",wgetch(stdscr));
         wrefresh(ui);
 
