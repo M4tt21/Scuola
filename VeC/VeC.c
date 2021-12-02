@@ -42,7 +42,7 @@ int main(){
         wrefresh(ui);
         refresh();
 
-        usleep(100);
+        usleep(500);
     }while(1);
 
 
