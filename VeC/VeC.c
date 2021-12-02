@@ -38,14 +38,16 @@ int main(){
         box(game, 0 , 0);
 
 
-        wrefresh(ui);
-        wrefresh(game);
+        
 
         gtemaxyx(ui,&i1,&i2);
         gtemaxyx(game,&g1,&g2);
 
         mvwaddchstr(ui,1,1, "ui:%d|%d", i1,i2);
         mvwaddchstr(ui,1,20, "ui:%d|%d", g1,g2);
+        
+        wrefresh(ui);
+        wrefresh(game);
 
         usleep(100);
     } while (1);
