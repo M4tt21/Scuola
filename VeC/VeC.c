@@ -33,6 +33,7 @@ int main(){
         cha=wgetch(input);
         mvprintw(4,0,"WHAT %d", cha);
         refresh();
+        usleep(100);
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || cha!=10);
     clear();
 
