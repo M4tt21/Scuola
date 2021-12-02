@@ -31,7 +31,8 @@ int main(){
         redrawwin(game);
         wrefresh(ui);
         wrefresh(game);
-        sleep(1);
+        timeout(-1);
+        mvwaddch(ui,1,1,'@');
     } while (1);
     
 
