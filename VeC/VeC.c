@@ -26,7 +26,7 @@ int main(){
 
     wrefresh(ui);
     wrefresh(game);
-    //wgetch(input);
+    wgetch(input);
     do{
         
     } while (1);
