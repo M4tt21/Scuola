@@ -34,6 +34,8 @@ int main(){
         //resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
         //resizeterm(100,40);
 
+        wclear(ui, game);
+
         box(ui, 0 , 0);
         box(game, 0 , 0);
 
