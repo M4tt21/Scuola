@@ -30,6 +30,7 @@ int main(){
         mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
         mvprintw(2,0,"Ridimensionamenti futuri potrebbero causare un malfunzionamento del programma.");
         mvprintw(3,0,"Premere invio per confermare!");
+        cha=wgetch(input);
         mvprintw(4,0,"WHAT %d", cha);
         refresh();
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || cha!=10);
