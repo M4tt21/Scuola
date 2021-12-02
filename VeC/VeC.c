@@ -30,7 +30,7 @@ int main(){
     
     do{
         //if(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2))
-            resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
+            resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
         //resizeterm(100,40);
 
         box(ui, 0 , 0);
