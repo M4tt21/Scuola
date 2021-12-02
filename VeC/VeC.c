@@ -1,18 +1,9 @@
 #include "VeC.h"
 
-void vespa(int pipeout);
-void contadino(int pipeout);
-void AreaGioco(int pipein);
-void print_ui(void);
-void kill_p(WINDOW *w, int p1,int p2);
-
 int main(){
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
-
-    int height, width, starty, startx;
-    height=width=starty=startx=10;
     
 
     //lncurses e rand setup
@@ -20,13 +11,15 @@ int main(){
     cbreak();
     noecho();
 
-    WINDOW *local_win;
+    WINDOW *ui, *game;
 
-	local_win = newwin(height, width, starty, startx);
-	box(local_win, 0 , 0);		/* 0, 0 gives default characters 
-					 * for the vertical and horizontal
-					 * lines			*/
-	wrefresh(local_win);
+	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
+	box(ui, 0 , 0);
+    game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, 1+UI_HEIGHT+BORDER*2, 0);
+	box(game, 0 , 0);
+
+
+	refresh();
     do
     {
         /* code */
