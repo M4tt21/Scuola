@@ -36,6 +36,9 @@ int main(){
     box(game, 0, 0);
     refresh();
 
+    wrefresh(ui);
+    wrefresh(game);
+
     sleep(100);
     
     srand((int)time(0));
