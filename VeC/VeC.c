@@ -31,7 +31,7 @@ int main(){
         mvprintw(3,0,"Premere invio per confermare!");
         refresh();
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || wgetch(input)!=10);
-    delwin(stdscr);
+    clear();
 
 
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
@@ -40,33 +40,10 @@ int main(){
 	box(game, 0 , 0);
 
     
+    wrefresh(ui);
+    wrefresh(game);
 
-
-    int i1,i2,g1,g2;
-
-    
-    
-    do{
-        //if(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2))
-        //resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
-        //resizeterm(100,40);
-        box(ui, 0 , 0);
-        box(game, 0 , 0);
-
-
-        
-
-        getmaxyx(ui,i1,i2);
-        getmaxyx(game,g1,g2);
-
-        mvwprintw(ui,1,1, "ui:%d|%d", i1,i2);
-        mvwprintw(game,1,20, "ui:%d|%d", g1,g2);
-
-        wrefresh(ui);
-        wrefresh(game);
-
-        usleep(100);
-    } while (1);
+    sleep(100);
     
 
     endwin();
