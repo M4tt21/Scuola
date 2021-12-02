@@ -34,6 +34,7 @@ int main(){
     wrefresh(win);
 
     c=wgetch(win);
+    clear();
 
     sleep(100);
 
