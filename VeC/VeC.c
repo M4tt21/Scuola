@@ -23,28 +23,15 @@ int main(){
     nodelay(input, true);
     keypad(input, true);
     int r,c;
-    char cha;
-    int x=1;
     do{
         getmaxyx(stdscr,  r,c);
         mvprintw(0,0,"Ridimensionare la finestra ad almeno [%d|%d]",(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
         mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
         mvprintw(2,0,"Ridimensionamenti futuri potrebbero causare un malfunzionamento del programma.");
         mvprintw(3,0,"Premere invio per confermare!");
-        cha=wgetch(stdscr);
-        mvprintw(4,0,"WHAT %d", cha);
-        if(x){
-            mvaddch(5,0,'@');
-            x--;
-        }
-        else{
-            mvdelch(5,0);
-            x++;
-        }
         refresh();
         usleep(100);
-        
-    }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || cha!=10);
+    }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || getch()!=10);
     clear();
 
 
