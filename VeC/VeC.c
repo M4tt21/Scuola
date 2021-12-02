@@ -19,7 +19,8 @@ int main(){
 	box(game, 0 , 0);
 
 
-	refresh();
+	wrefresh(ui);
+    wrefresh(game);
     do
     {
         /* code */
