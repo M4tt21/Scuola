@@ -19,12 +19,12 @@ int main(){
 	box(game, 0 , 0);
 
 
-	wrefresh(ui);
-    wrefresh(game);
-    do
-    {
-        /* code */
-    } while (1);
+
+    do{
+        wrefresh(ui);
+        wrefresh(game);
+        timeout(0);
+    } while (getch()!=10);
     
 
     endwin();
