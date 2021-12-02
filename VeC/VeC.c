@@ -12,8 +12,9 @@ int main(){
     noecho();
     curs_set(0);
 
-    WINDOW *ui, *game;
+    WINDOW *ui, *game, *input;
 
+    input=newwin(0,0,0,0);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
@@ -21,11 +22,12 @@ int main(){
 
 
 
+
     do{
         wrefresh(ui);
         wrefresh(game);
         timeout(0);
-    } while (getch()!=10);
+    } while (wgetch(input)!=10);
     
 
     endwin();
