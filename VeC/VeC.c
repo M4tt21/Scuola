@@ -35,6 +35,10 @@ int main(){
     
     wrefresh(ui);
     wrefresh(game);
+    nodelay(ui,true);
+    nodelay(stdscr,true);
+    nodelay(input,true);
+    nodelay(game,true);
 
     do{
         mvwprintw(ui, 1,1,"Character: %c",wgetch(ui));
