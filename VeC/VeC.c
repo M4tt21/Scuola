@@ -31,6 +31,7 @@ int main(){
         mvprintw(3,0,"Premere invio per confermare!");
         refresh();
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || wgetch(input)!=10);
+    delwin(stdscr);
 
 
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
