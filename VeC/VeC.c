@@ -40,8 +40,7 @@ int main(){
     wrefresh(ui);
     wrefresh(game);
 
-    getch();
-    sleep(100);
+
     
     srand((int)time(0));
 
@@ -49,6 +48,9 @@ int main(){
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
+
+        getch();
+    sleep(100);
 
     if(pipe(filedes)==-1){
         perror("pipe call");
