@@ -30,6 +30,7 @@ int main(){
         doupdate();
         wrefresh(ui);
         wrefresh(game);
+        sleep(1);
     } while (1);
     
 
