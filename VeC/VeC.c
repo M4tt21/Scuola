@@ -40,7 +40,7 @@ int main(){
         wrefresh(ui);
         wrefresh(game);
 
-        sleep(1);
+        usleep(100);
     } while (1);
     
 
