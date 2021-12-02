@@ -24,10 +24,10 @@ int main(){
 
     wrefresh(ui);
     wrefresh(game);
+    wgetch(input);
     do{
         
-        timeout(0);
-    } while (wgetch(input)!=10);
+    } while (1);
     
 
     endwin();
