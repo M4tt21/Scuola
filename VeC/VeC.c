@@ -27,10 +27,9 @@ int main(){
     
     
     do{
-        mvwaddch(ui, 1, 1, '@');
         wrefresh(ui);
         wrefresh(game);
-    } while (wgetch(input)!=10);
+    } while (1);
     
 
     endwin();
