@@ -21,13 +21,15 @@ int main(){
 	box(game, 0 , 0);
 
     nodelay(input, true);
+    nodelay(ui, true);
+    nodelay(game, true);
+    nodelay(stdscr, true);
 
 
 
     wrefresh(ui);
     wrefresh(game);
-    wrefresh(ui);
-    wrefresh(game);
+
     do{
         
     } while (1);
