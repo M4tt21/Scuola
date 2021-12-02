@@ -21,18 +21,15 @@ int main(){
 	box(game, 0 , 0);
 
     nodelay(input, true);
-    nodelay(ui, true);
-    nodelay(game, true);
-    nodelay(stdscr, true);
 
 
 
-    wrefresh(ui);
-    wrefresh(game);
-    wgetch(input);
+    
+    
     do{
-        
-    } while (1);
+        wrefresh(ui);
+        wrefresh(game);
+    } while (wgetch(input)!=10);
     
 
     endwin();
