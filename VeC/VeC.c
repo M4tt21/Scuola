@@ -9,7 +9,7 @@ int main(){
     wprintw(win,"this is my box");
     wrefresh(win);
 
-    int c=getch();
+    int c=wgetch(win);
     endwin();
     
 /*    int filedes[2];
