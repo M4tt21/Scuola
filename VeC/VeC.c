@@ -11,30 +11,33 @@ int main(){
     cbreak();
     noecho();
     curs_set(0);
+    WINDOW *ui, *game, *input;
+
+    
 
 
+
+    
+
+    input=newwin(0,0,MAXX*2,MAXY*2);
+    nodelay(input, true);
+    keypad(input, true);
     int r,c;
     do{
         getmaxyx(stdscr,  r,c);
-        mvprintw(0,0,"Ridimensionare la finestra a [%d|%d]",(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
+        mvprintw(0,0,"Ridimensionare la finestra ad almeno [%d|%d]",(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
         mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
+        mvprintw(2,0,"Premere invio per confermare!");
         refresh();
-
-    }while(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2));
-
+    }while(r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2 && wgetch(input)!=10);
 
 
-    WINDOW *ui, *game, *input;
-
-    input=newwin(0,0,MAXX*2,MAXY*2);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
-    nodelay(input, true);
-    keypad(stdscr, true);
-    keypad(input, true);
+    
 
 
     int i1,i2,g1,g2;
