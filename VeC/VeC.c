@@ -36,6 +36,9 @@ int main(){
         wnoutrefresh(game);
         doupdate();
 
+        wrefresh(ui);
+        wrefresh(game);
+
         sleep(1);
     } while (1);
     
