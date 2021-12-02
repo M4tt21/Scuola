@@ -1,19 +1,16 @@
 #include "VeC.h"
 
 int main(){
-
-
-    
     int filedes[2];
     int pid_vespa;
     int pid_contadino;
     
-
     //lncurses e rand setup
     initscr();
     cbreak();
     noecho();
     curs_set(0);
+    keypad(stdscr, true);
     WINDOW *ui, *game, *input;
     int r,c;
     do{
@@ -34,61 +31,18 @@ int main(){
     refresh();	
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
     refresh();
-    
-    box(ui, 0 , 0);
-	box(game, 0 , 0);
 
-
+    box(ui, 0, 0);
+    box(game, 0, 0);
     refresh();
-
-    do{
-        wrefresh(ui);
-        //refresh();
-        char c=wgetch(input);
-        mvwprintw(ui, 1,1,"Character: %c",c);
-        wrefresh(ui);
-        refresh();
-
-        sleep(1);
-    }while(1);
-
-
-
-    sleep(10000);
     
-
-    endwin();
-/*  noecho();
-    //start_color();
-    keypad(stdscr, true);
     srand((int)time(0));
     curs_set(0);
 
-  init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
+    init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
     init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
     init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
-
-    w = newwin(10, 10, 0, 0);
-    w = newwin(10, 10, 10, 10);
-	box(w, 0 , 0);		
-	wrefresh(w);
-    box(w, 0 , 0);	
-    box(w, 0 , 0);	
-    wrefresh(w);
-    box(w, 0 , 0);	
-    wrefresh(w);
-    box(w, 0 , 0);	
-    box(w, 0 , 0);	
-    wrefresh(w);
-    getch();
-
-    //w=newwin(10,10,0,0);
-    //wattron(w, COLOR_PAIR(1));
-    //wborder(w,'X','X','X','X','X','X','X','X');
-    //box(w, 0, 0);
-    wrefresh(w);
-    print_ui();
 
     if(pipe(filedes)==-1){
         perror("pipe call");
@@ -136,15 +90,14 @@ int main(){
 
     getch();
 
-    kill_p(w, pid_vespa,pid_contadino);*/
+    kill_p(pid_vespa,pid_contadino);
     return 0; 
 }
 
-void kill_p(WINDOW *w, int p1,int p2){
+void kill_p(int p1,int p2){
     kill(p1,1);
     kill(p2,1);
     endwin();
-    delwin(w);
 }
 
 void vespa(int pipeout){

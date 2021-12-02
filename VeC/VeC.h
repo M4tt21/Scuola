@@ -28,4 +28,4 @@ void vespa(int pipeout);
 void contadino(int pipeout);
 void AreaGioco(int pipein);
 void print_ui(void);
-void kill_p(WINDOW *w, int p1,int p2);
+void kill_p(int p1,int p2);
