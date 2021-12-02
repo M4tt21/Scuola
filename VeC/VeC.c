@@ -9,6 +9,7 @@ int main(){
     initscr();
     cbreak();
     noecho();
+    start_color();
     curs_set(0);
     keypad(stdscr, true);
     WINDOW *ui, *game, *input;
@@ -42,7 +43,6 @@ int main(){
     sleep(100);
     
     srand((int)time(0));
-    curs_set(0);
 
     init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
     init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
