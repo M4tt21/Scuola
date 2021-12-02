@@ -31,7 +31,7 @@ int main(){
         mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
         mvprintw(2,0,"Ridimensionamenti futuri potrebbero causare un malfunzionamento del programma.");
         mvprintw(3,0,"Premere invio per confermare!");
-        cha=wgetch(input);
+        cha=wgetch(stdscr);
         mvprintw(4,0,"WHAT %d", cha);
         if(x){
             mvaddch(5,0,'@');
