@@ -37,7 +37,7 @@ int main(){
     wrefresh(game);
 
     do{
-        timeout(0);
+        wtimeout(ui,0);
         mvwprintw(ui, 1,1,"Character: %c",wgetch(ui));
         wrefresh(ui);
         refresh();
