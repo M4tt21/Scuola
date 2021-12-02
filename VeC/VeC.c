@@ -20,6 +20,8 @@ int main(){
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
+    nodelay(input, TRUE);
+
 
 
     wrefresh(ui);
