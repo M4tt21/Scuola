@@ -41,7 +41,7 @@ int main(){
     nodelay(game,true);
 
     do{
-        char c=wgetch(input);
+        char c=wgetch(game);
         mvwprintw(ui, 1,1,"Character: %c",c);
         wrefresh(ui);
         refresh();
