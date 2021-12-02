@@ -31,7 +31,7 @@ int main(){
         mvprintw(3,0,"Premere invio per confermare!");
         refresh();
         usleep(100);
-    }while(!((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()!=10));
+    }while(!((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()==10));
     clear();
 
 
@@ -44,7 +44,7 @@ int main(){
     wrefresh(ui);
     wrefresh(game);
 
-    sleep(100);
+    sleep(10000);
     
 
     endwin();
