@@ -34,7 +34,7 @@ int main(){
         cha=wgetch(input);
         mvprintw(4,0,"WHAT %d", cha);
         if(x){
-            mvaddch('@');
+            mvaddch(5,0,'@');
             x--;
         }
         else{
