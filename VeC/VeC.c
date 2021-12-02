@@ -12,16 +12,6 @@ int main(){
     noecho();
     curs_set(0);
     WINDOW *ui, *game, *input;
-
-    
-
-
-
-    
-
-    
-    nodelay(stdscr, true);
-    keypad(stdscr, true);
     int r,c;
     do{
         getmaxyx(stdscr,  r,c);
@@ -40,16 +30,15 @@ int main(){
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
-    nodelay(input, true);
-    keypad(input, true);
+
 
     
     wrefresh(ui);
     wrefresh(game);
 
     do{
-        if(kbhit())
-            mvwprintw(ui, 1,1,"Character: %c",getch());
+        timeout(0);
+        mvwprintw(ui, 1,1,"Character: %c",getch());
         wrefresh(ui);
 
         usleep(100);
