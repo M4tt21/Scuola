@@ -54,7 +54,7 @@ int main(){
         _exit(1);
     }
 
-            getch();
+    mvwaddch(ui,1,1,getch());
     sleep(100);
 
     pid_vespa=fork();
