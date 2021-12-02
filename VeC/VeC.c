@@ -43,7 +43,7 @@ int main(){
     do{
         wrefresh(ui);
         //refresh();
-        char c=wgetch(game);
+        char c=wgetch(input);
         mvwprintw(ui, 1,1,"Character: %c",c);
         wrefresh(ui);
         refresh();
