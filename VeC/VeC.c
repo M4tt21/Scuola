@@ -27,9 +27,10 @@ int main(){
         getmaxyx(stdscr,  r,c);
         mvprintw(0,0,"Ridimensionare la finestra ad almeno [%d|%d]",(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
         mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
-        mvprintw(2,0,"Premere invio per confermare!");
+        mvprintw(2,0,"Ridimensionamenti futuri potrebbero causare un malfunzionamento del programma.");
+        mvprintw(3,0,"Premere invio per confermare!");
         refresh();
-    }while(r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2 && wgetch(input)!=10);
+    }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) && c<MAXX+BORDER*2) || wgetch(input)!=10);
 
 
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
@@ -48,9 +49,6 @@ int main(){
         //if(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2))
         //resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , 1+MAXX+BORDER*2);
         //resizeterm(100,40);
-
-        wclear(ui);
-        wclear(game);
         box(ui, 0 , 0);
         box(game, 0 , 0);
 
