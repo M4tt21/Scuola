@@ -29,10 +29,8 @@ int main(){
     do{
         redrawwin(ui);
         redrawwin(game);
-        wrefresh(ui);
-        wrefresh(game);
-        wtimeout(ui,-1);
-        mvwaddch(ui,1,1,'@');
+
+        sleep(1);
     } while (1);
     
 
