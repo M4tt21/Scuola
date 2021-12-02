@@ -33,7 +33,7 @@ int main(){
     wprintw(win,"this is my box");
     wrefresh(win);
 
-    int c=wgetch(win);
+    c=wgetch(win);
 
     sleep(100);
 
