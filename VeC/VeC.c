@@ -27,7 +27,8 @@ int main(){
     
     
     do{
-
+        if(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2))
+            resizeterm((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
         wnoutrefresh(ui);
         wnoutrefresh(game);
         doupdate();
