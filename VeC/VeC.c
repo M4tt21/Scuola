@@ -40,6 +40,7 @@ int main(){
     wrefresh(ui);
     wrefresh(game);
 
+    getch();
     sleep(100);
     
     srand((int)time(0));
