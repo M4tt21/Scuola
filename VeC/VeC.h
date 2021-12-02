@@ -6,7 +6,6 @@
 #include <ncurses.h>
 #include <time.h>
 #include <stdbool.h>
-#include <conio.h>
 
 #define UI_HEIGHT 3
 #define BORDER 1
