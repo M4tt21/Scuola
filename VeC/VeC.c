@@ -8,7 +8,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    //cbreak();
+    cbreak();
     noecho();
     curs_set(0);
     WINDOW *ui, *game, *input;
@@ -20,8 +20,8 @@ int main(){
     
 
     input=newwin(0,0,MAXX*2,MAXY*2);
-    nodelay(input, true);
-    keypad(input, true);
+    nodelay(stdscr, true);
+    keypad(stdscr, true);
     int r,c;
     do{
         getmaxyx(stdscr,  r,c);
@@ -31,7 +31,7 @@ int main(){
         mvprintw(3,0,"Premere invio per confermare!");
         refresh();
         usleep(100);
-    }while(!((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()==10));
+    }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()!=10);
     clear();
 
 
