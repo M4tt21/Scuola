@@ -45,7 +45,7 @@ int main(){
 
         mvwaddchstr(ui,1,1, "ui:%d|%d", i1,i2);
         mvwaddchstr(ui,1,20, "ui:%d|%d", g1,g2);
-        
+        mvwaddch(ui,1,1,'@');
         wrefresh(ui);
         wrefresh(game);
 
