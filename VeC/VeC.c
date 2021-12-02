@@ -15,7 +15,7 @@ int main(){
 
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
-    game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, 1+UI_HEIGHT+BORDER*2, 0);
+    game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
 
