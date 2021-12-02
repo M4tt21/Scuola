@@ -12,6 +12,18 @@ int main(){
     noecho();
     curs_set(0);
 
+
+    int r,c;
+    do{
+        getmaxyx(stdscr,  r,c);
+        mvprintw(0,0,"Ridimensionare la finestra a [%d|%d]",(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2);
+        mvprintw(1,0,"Dimensione corrente [%d|%d]",r,c);
+        refresh();
+
+    }while(is_term_resized((MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) , MAXX+BORDER*2));
+
+
+
     WINDOW *ui, *game, *input;
 
     input=newwin(0,0,MAXX*2,MAXY*2);
