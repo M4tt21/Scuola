@@ -6,7 +6,7 @@ int main(){
     cbreak();
     noecho();
     curs_set(0);
-    WINDOW *win=newwin(10,20,10,10);
+    WINDOW *win=newwin(10,20,0,0);
     refresh();
     box(win,0,0);
     wprintw(win,"this is my box");
