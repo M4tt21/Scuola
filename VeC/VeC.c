@@ -35,6 +35,8 @@ int main(){
     box(ui, 0, 0);
     box(game, 0, 0);
     refresh();
+
+    sleep(100);
     
     srand((int)time(0));
     curs_set(0);
