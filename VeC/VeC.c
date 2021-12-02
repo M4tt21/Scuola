@@ -19,7 +19,7 @@ int main(){
 
     
 
-    input=newwin(0,0,MAXX*2,MAXY*2);
+    
     nodelay(stdscr, true);
     keypad(stdscr, true);
     int r,c;
@@ -34,15 +34,27 @@ int main(){
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()!=10);
     clear();
 
-
+    input=newwin(0,0,MAXX*2,MAXY*2);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
+    nodelay(input, true);
+    keypad(input, true);
+
     
     wrefresh(ui);
     wrefresh(game);
+
+    do{
+
+        mvwprintw(ui, 1,1,"Character: %c",wgetch(input));
+
+        usleep(100);
+    }while(1);
+
+
 
     sleep(10000);
     
