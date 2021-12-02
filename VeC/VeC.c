@@ -27,28 +27,14 @@ int main(){
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()!=10);
     clear();
 
-    WINDOW *win=newwin(10,20,0,0);
-    refresh();
-    box(win,0,0);
-    wprintw(win,"this is my box");
-    wrefresh(win);
 
-    c=wgetch(win);
-    clear();
-
-    sleep(100);
-
-    /*input=newwin(0,0,MAXX*2,MAXY*2);
+    input=newwin(0,0,MAXX*2,MAXY*2);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
 
 
-
-
-
-    
     wrefresh(ui);
     wrefresh(game);
     nodelay(ui,true);
@@ -73,7 +59,7 @@ int main(){
     
 
     endwin();
-  noecho();
+/*  noecho();
     //start_color();
     keypad(stdscr, true);
     srand((int)time(0));
