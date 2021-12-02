@@ -8,7 +8,7 @@ int main(){
 
     //lncurses e rand setup
     initscr();
-    cbreak();
+    //cbreak();
     noecho();
     curs_set(0);
     WINDOW *ui, *game, *input;
