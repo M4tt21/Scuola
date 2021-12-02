@@ -50,6 +50,7 @@ int main(){
     do{
 
         mvwprintw(ui, 1,1,"Character: %c",wgetch(input));
+        wrefresh(ui);
 
         usleep(100);
     }while(1);
