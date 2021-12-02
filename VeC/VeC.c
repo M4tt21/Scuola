@@ -3,6 +3,7 @@
 int main(){
 
     initscr();
+    cbreak();
     WINDOW *win=newwin(10,20,10,10);
     refresh();
     box(win,0,0);
