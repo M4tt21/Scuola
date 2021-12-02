@@ -38,7 +38,7 @@ int main(){
 
     do{
         timeout(0);
-        mvwprintw(ui, 1,1,"Character: %c",getch());
+        //mvwprintw(ui, 1,1,"Character: %c",getch());
         wrefresh(ui);
 
         usleep(100);
