@@ -40,8 +40,8 @@ int main(){
 
         
 
-        getmaxyx(ui,&i1,&i2);
-        getmaxyx(game,&g1,&g2);
+        getmaxyx(ui,i1,i2);
+        getmaxyx(game,g1,g2);
 
         mvwprintw(ui,1,1, "ui:%d|%d", i1,i2);
         mvwprintw(ui,1,20, "ui:%d|%d", g1,g2);
