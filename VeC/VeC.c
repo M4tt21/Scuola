@@ -27,8 +27,10 @@ int main(){
     
     
     do{
-        redrawwin(ui);
-        redrawwin(game);
+
+        wnoutrefresh(ui);
+        wnoutrefresh(game);
+        doupdate();
 
         sleep(1);
     } while (1);
