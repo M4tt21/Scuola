@@ -30,6 +30,8 @@ int main(){
     wrefresh(ui);
     wrefresh(game);
     wgetch(input);
+    wrefresh(ui);
+    wrefresh(game);
     do{
         
     } while (1);
