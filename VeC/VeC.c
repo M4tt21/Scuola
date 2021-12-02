@@ -27,6 +27,7 @@ int main(){
     
     
     do{
+        doupdate();
         wrefresh(ui);
         wrefresh(game);
     } while (1);
