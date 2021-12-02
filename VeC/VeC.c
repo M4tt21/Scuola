@@ -2,20 +2,9 @@
 
 int main(){
 
-    initscr();
-    cbreak();
-    noecho();
-    curs_set(0);
-    WINDOW *win=newwin(10,20,0,0);
-    refresh();
-    box(win,0,0);
-    wprintw(win,"this is my box");
-    wrefresh(win);
 
-    int c=wgetch(win);
-    endwin();
     
-/*    int filedes[2];
+    int filedes[2];
     int pid_vespa;
     int pid_contadino;
     
@@ -38,11 +27,23 @@ int main(){
     }while((r<(MAXY+BORDER*2)+(UI_HEIGHT+BORDER*2) || c<MAXX+BORDER*2) || getch()!=10);
     clear();
 
-    input=newwin(0,0,MAXX*2,MAXY*2);
+    WINDOW *win=newwin(10,20,0,0);
+    refresh();
+    box(win,0,0);
+    wprintw(win,"this is my box");
+    wrefresh(win);
+
+    int c=wgetch(win);
+
+    sleep(100);
+
+    /*input=newwin(0,0,MAXX*2,MAXY*2);
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
 	box(ui, 0 , 0);
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
 	box(game, 0 , 0);
+
+
 
 
 
