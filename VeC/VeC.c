@@ -110,9 +110,7 @@ void vespa(int pipeout){
                 dx=0-PASSO;
                 break;
             
-            case 1: 
-                dx=0;
-                break;
+
 
             case 2: 
                 dx=PASSO;
@@ -124,9 +122,7 @@ void vespa(int pipeout){
                 dy=0-PASSO;
                 break;
             
-            case 1: 
-                dy=0;
-                break;
+
 
             case 2: 
                 dy=PASSO;
