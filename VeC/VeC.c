@@ -103,7 +103,7 @@ void vespa(int pipeout){
     do
     {
         write(pipeout, &pos_vespa, sizeof(pos_vespa));
-        if((pos_vespa.x+dx==0 || pos_vespa.x+dx==MAXX-1) || (pos_vespa.y+dy==0 || pos_vespa.y+dy==MAXY-1) || (dx==-2)){    //cambiamento direzione
+        if((pos_vespa.x+dx<0 || pos_vespa.x+dx>MAXX-1) || (pos_vespa.y+dy<0 || pos_vespa.y+dy>MAXY-1) || (dx==-2)){    //cambiamento direzione
             switch (RNG()%3) //direzione x
             {
             case 0: 
@@ -132,6 +132,8 @@ void vespa(int pipeout){
                 dy=PASSO;
                 break;
             }
+            if(dx==dy==0)
+                dx=-2;
         }
         else{   //Movimento
             pos_vespa.x+=dx;
