@@ -191,7 +191,7 @@ void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
                 mvwaddch(game, pos_vespa.y+BORDER, pos_vespa.x+BORDER, ' ');
             pos_vespa=rbuffer;
         }
-        mvaddch(rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
+        mvwaddch(game,rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
         wrefresh(game);
     } while (true);
 }
