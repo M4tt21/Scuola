@@ -14,6 +14,7 @@
 #define MAXY (24+UI_HEIGHT+BORDER)
 #define PASSO 1
 #define VEL_VESPA 70000
+#define OFFWALL 10
 
 typedef struct{
     char c;
