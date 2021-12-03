@@ -26,8 +26,8 @@ int main(){
     clear();
 
 
-    input=newwin(0,0,MAXX*2,MAXY*2);
-    refresh();
+    //input=newwin(0,0,MAXX*2,MAXY*2);
+    //refresh();
 	ui = newwin(UI_HEIGHT+BORDER*2, MAXX+BORDER*2, 0, 0);
     refresh();	
     game = newwin(MAXY+BORDER*2, MAXX+BORDER*2, UI_HEIGHT+BORDER*2, 0);
@@ -40,7 +40,9 @@ int main(){
     wrefresh(ui);
     wrefresh(game);
 
-
+    mvwprintw(ui,1,1,"WOW %c",getch());
+    wrefresh(ui);
+    sleep(100);
     
     srand((int)time(0));
 
@@ -53,10 +55,6 @@ int main(){
         perror("pipe call");
         _exit(1);
     }
-
-    mvwprintw(ui,1,1,"WOOOW %c",getch());
-    wrefresh(ui);
-    sleep(100);
 
     pid_vespa=fork();
 
@@ -89,7 +87,7 @@ int main(){
 
         default:
             close(filedes[1]);
-            AreaGioco(filedes[0]);
+            AreaGioco(filedes[0],ui,game);
             break;
         }
 
@@ -121,6 +119,6 @@ void print_ui(){
     
 }
 
-void AreaGioco(int pipein){
+void AreaGioco(int pipein, WINDOW *ui, WINDOW *gioco){
     
 }

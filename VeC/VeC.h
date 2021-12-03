@@ -26,6 +26,6 @@ long int RNG(){return rand();};
 
 void vespa(int pipeout);
 void contadino(int pipeout);
-void AreaGioco(int pipein);
+void AreaGioco(int pipein, WINDOW *ui, WINDOW *gioco);
 void print_ui(void);
 void kill_p(int p1,int p2);
