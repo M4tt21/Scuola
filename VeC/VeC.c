@@ -6,6 +6,7 @@ int main(){
     int pid_contadino;
     
     //lncurses e rand setup
+    srand((int)time(0));
     initscr();
     cbreak();
     noecho();
@@ -39,17 +40,9 @@ int main(){
 
     wrefresh(ui);
     wrefresh(game);
-
-    mvwprintw(ui,1,1,"WOW %c",getch());
-    wrefresh(ui);
-    sleep(100);
     
-    srand((int)time(0));
-
-    init_pair(1, COLOR_BLACK, COLOR_BLUE); //UI BORDER
-    init_pair(2, COLOR_BLACK, COLOR_WHITE); //colori ui score
-    init_pair(3, COLOR_YELLOW, COLOR_BLACK); //colore vespa
-    init_pair(4, COLOR_RED, COLOR_BLACK);//colore contadino
+    init_pair(1, COLOR_YELLOW, COLOR_BLACK); //colore vespa
+    init_pair(2, COLOR_RED, COLOR_BLACK);//colore contadino
 
     if(pipe(filedes)==-1){
         perror("pipe call");
@@ -57,7 +50,6 @@ int main(){
     }
 
     pid_vespa=fork();
-
     switch(pid_vespa)
     {
     case -1:
@@ -72,7 +64,6 @@ int main(){
     
     default:
         pid_contadino=fork();
-
         switch (pid_contadino)
         {
         case -1:
@@ -90,13 +81,8 @@ int main(){
             AreaGioco(filedes[0],ui,game);
             break;
         }
-
         break;
     }
-
-
-    getch();
-
     kill_p(pid_vespa,pid_contadino);
     return 0; 
 }
@@ -108,17 +94,104 @@ void kill_p(int p1,int p2){
 }
 
 void vespa(int pipeout){
+    pos pos_vespa;
+    pos_vespa.c='^';
+    pos_vespa.x=2;
+    pos_vespa.y=2;
+    int dx,dy;
+    dx=dy=-2;
+    do
+    {
+        write(pipeout, &pos_vespa, sizeof(pos_vespa));
+        if((pos_vespa.x+dx==0 || pos_vespa.x+dx==MAXX-1) || (pos_vespa.y+dy==0 || pos_vespa.y+dy==MAXY-1) || (dx==-2)){    //cambiamento direzione
+            switch (RNG()%3) //direzione x
+            {
+            case 0: 
+                dx=0-PASSO;
+                break;
+            
+            case 1: 
+                dx=0;
+                break;
 
+            case 2: 
+                dx=PASSO;
+                break;
+            }
+            switch (RNG()%3) //direzione y
+            {
+            case 0: 
+                dy=0-PASSO;
+                break;
+            
+            case 1: 
+                dy=0;
+                break;
+
+            case 2: 
+                dy=PASSO;
+                break;
+            }
+        }
+        else{   //Movimento
+            pos_vespa.x+=dx;
+            pos_vespa.y+=dy;
+        }
+        usleep(VEL_VESPA);
+    } while (true);
 }
 
 void contadino(int pipeout){
+    pos pos_con;
+    pos_con.c='#';
+    pos_con.x=MAXX/2;
+    pos_con.y=MAXY/2;
+    do{
+        write(pipeout, &pos_con, sizeof(pos_con));
+        switch (getch())
+        {
+        case KEY_UP:
+            if(pos_con.y>0)
+                pos_con.y-=1;
+            break;
+        
+        case KEY_DOWN:
+            if(pos_con.y<MAXY-1)
+                pos_con.y+=1;
+            break;
 
+        case KEY_LEFT:
+            if(pos_con.x>0)
+                pos_con.x-=1;
+            break;
+
+        case KEY_RIGHT:
+            if(pos_con.x<MAXX-1)
+                pos_con.x+=1;
+            break;
+        }
+    }while(true);
 }
 
-void print_ui(){
-    
-}
-
-void AreaGioco(int pipein, WINDOW *ui, WINDOW *gioco){
-    
+void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
+    pos pos_vespa, pos_con, rbuffer;
+    pos_vespa.x=-1;
+    pos_vespa.y=-1;
+    pos_con.x=-1;
+    pos_con.y=-1;
+    do{
+        read(pipein, &rbuffer, sizeof(rbuffer));
+        if(rbuffer.c=='#'){
+            if(pos_con.x!=rbuffer.x || pos_con.y!=rbuffer.y)
+                mvwaddch(game, pos_con.y+BORDER, pos_con.x+BORDER, ' ');
+            pos_con=rbuffer;
+        }
+        else{
+            if(pos_vespa.x!=rbuffer.x || pos_vespa.y!=rbuffer.y)
+                mvwaddch(game, pos_vespa.y+BORDER, pos_vespa.x+BORDER, ' ');
+            pos_vespa=rbuffer;
+        }
+        mvaddch(rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
+        wrefresh(game);
+    } while (true);
 }
