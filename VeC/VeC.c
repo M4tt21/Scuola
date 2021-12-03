@@ -139,6 +139,8 @@ void vespa(int pipeout){
             pos_vespa.x+=dx;
             pos_vespa.y+=dy;
         }
+        if((pos_vespa.x==0 || pos_vespa.y==0 || pos_vespa.x==MAXX-1 || pos_vespa.y==MAXY-1) && RNG()%OFFWALL==0)
+                dx=-2;  //movimento stagnante
         if(dy==0)
             usleep(VEL_VESPA/2);
         else
