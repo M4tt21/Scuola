@@ -140,7 +140,7 @@ void vespa(int pipeout){
             pos_vespa.y+=dy;
         }
         if(dy==0)
-            usleep(VEL_VESPA*2);
+            usleep(VEL_VESPA/2);
         else
             usleep(VEL_VESPA);
     } while (true);
