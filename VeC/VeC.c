@@ -175,10 +175,10 @@ void contadino(int pipeout){
 
 void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
     pos pos_vespa, pos_con, rbuffer;
-    pos_vespa.x=-1;
-    pos_vespa.y=-1;
-    pos_con.x=-1;
-    pos_con.y=-1;
+    pos_vespa.x=-2;
+    pos_vespa.y=-2;
+    pos_con.x=-2;
+    pos_con.y=-2;
     do{
         read(pipein, &rbuffer, sizeof(rbuffer));
         if(rbuffer.c=='#'){
