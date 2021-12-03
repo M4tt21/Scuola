@@ -132,7 +132,7 @@ void vespa(int pipeout){
                 dy=PASSO;
                 break;
             }
-            if(dx==dy==0)
+            if(dx==0 && dy==0)
                 dx=-2;
         }
         else{   //Movimento
