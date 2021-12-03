@@ -110,7 +110,9 @@ void vespa(int pipeout){
                 dx=0-PASSO;
                 break;
             
-
+            case 1: 
+                dx=0;
+                break;
 
             case 2: 
                 dx=PASSO;
@@ -122,7 +124,9 @@ void vespa(int pipeout){
                 dy=0-PASSO;
                 break;
             
-
+            case 1: 
+                dy=0;
+                break;
 
             case 2: 
                 dy=PASSO;
@@ -135,7 +139,10 @@ void vespa(int pipeout){
             pos_vespa.x+=dx;
             pos_vespa.y+=dy;
         }
-        usleep(VEL_VESPA);
+        if(dy==0)
+            usleep(VEL_VESPA*2);
+        else
+            usleep(VEL_VESPA);
     } while (true);
 }
 
