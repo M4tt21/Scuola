@@ -179,11 +179,19 @@ void contadino(int pipeout){
 }
 
 void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
-    pos pos_vespa, pos_con, rbuffer;
+    int vite=N_VITE,i,j;
+    pos pos_vespa, pos_con, rbuffer, pos_trap[N_TRAP];
     pos_vespa.x=-2;
     pos_vespa.y=-2;
     pos_con.x=-2;
     pos_con.y=-2;
+    for(i=0; i<N_TRAP; i++){
+        pos_trap[i].x=-1;
+        pos_trap[i].c='X';
+
+    }
+    time_t start=time(NULL);
+
     do{
         read(pipein, &rbuffer, sizeof(rbuffer));
         if(rbuffer.c=='#'){
@@ -196,7 +204,45 @@ void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
                 mvwaddch(game, pos_vespa.y+BORDER, pos_vespa.x+BORDER, ' ');
             pos_vespa=rbuffer;
         }
+        
+        //Generazione Trappole
+        if(time(NULL)-start>=TIMER_TRAP){
+            
+            for(i=0; i<N_TRAP; i++){
+                bool rigenera;
+                do{
+                    rigenera=false;
+                    pos_trap[i].x=RNG()%MAXX;
+                    pos_trap[i].y=RNG()%MAXY;
+                    for(j=0; j<N_TRAP; j++){
+                        if((i!=j) && (isCollided(pos_trap[i],pos_trap[j])))
+                            rigenera=true;
+                    }
+                }while(rigenera);
+            }
+
+            start=time(NULL);
+        }
+
+        //cpllisione con trap
+        for(i=0; i<N_TRAP; i++){
+            if(isCollided(pos_vespa,pos_trap[i])){
+                vite++;
+                pos_trap[i].x=MAXX*2;//butto la trappola fuori
+            }
+        }
+
+        //collisione con vespa
+        if(isCollided(pos_con, pos_vespa))
+            vite--;
+        
+        for(i=0; i<N_TRAP; i++)
+            mvwaddch(game,pos_trap[i].y+BORDER,pos_trap[i].x+BORDER,pos_trap[i].c);
         mvwaddch(game,rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
         wrefresh(game);
-    } while (true);
+    } while (vite>0);
+}
+
+bool isCollided(pos p1, pos p2){
+    return ((p1.x==p2.x) && (p1.y==p2.y));
 }

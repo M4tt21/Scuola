@@ -15,6 +15,9 @@
 #define PASSO 1
 #define VEL_VESPA 70000
 #define RAND_CHANGE 10
+#define N_VITE 3
+#define N_TRAP 3
+#define TIMER_TRAP 10
 
 typedef struct{
     char c;
@@ -24,7 +27,7 @@ typedef struct{
 
 long int RNG(){return rand();};
 
-
+bool isCollided(pos p1, pos p2);
 void vespa(int pipeout);
 void contadino(int pipeout);
 void AreaGioco(int pipein, WINDOW *ui, WINDOW *game);
