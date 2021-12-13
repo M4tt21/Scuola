@@ -244,6 +244,7 @@ void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
             mvwaddch(game,pos_trap[i].y+BORDER,pos_trap[i].x+BORDER,pos_trap[i].c);
         mvwaddch(game,rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
         wrefresh(game);
+        wrefresh(ui);
     } while (vite>0);
 }
 
