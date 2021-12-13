@@ -239,6 +239,7 @@ void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
         if(isCollided(pos_con, pos_vespa))
             vite--;
         
+        mvwprintw(ui, 1+BORDER, 1+BORDER, "VITE: %d", vite);
         for(i=0; i<N_TRAP; i++)
             mvwaddch(game,pos_trap[i].y+BORDER,pos_trap[i].x+BORDER,pos_trap[i].c);
         mvwaddch(game,rbuffer.y+BORDER,rbuffer.x+BORDER,rbuffer.c);
