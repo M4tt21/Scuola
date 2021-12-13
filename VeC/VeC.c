@@ -181,12 +181,12 @@ void contadino(int pipeout){
 void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
     int vite=N_VITE,i,j;
     pos pos_vespa, pos_con, rbuffer, pos_trap[N_TRAP];
-    pos_vespa.x=-2;
-    pos_vespa.y=-2;
-    pos_con.x=-2;
-    pos_con.y=-2;
+    pos_vespa.x=-BORDER*2;
+    pos_vespa.y=-BORDER*2;
+    pos_con.x=-BORDER*2;
+    pos_con.y=-BORDER*2;
     for(i=0; i<N_TRAP; i++){
-        pos_trap[i].x=-1;
+        pos_trap[i].x=-BORDER*2;
         pos_trap[i].c='X';
 
     }
@@ -207,6 +207,9 @@ void AreaGioco(int pipein, WINDOW *ui, WINDOW *game){
         
         //Generazione Trappole
         if(time(NULL)-start>=TIMER_TRAP){
+
+            for(i=0; i<N_TRAP; i++)//Elimina posizioni precedenti
+                mvwaddch(game, pos_trap[i].y+BORDER, pos_trap[i].x+BORDER, ' ');
             
             for(i=0; i<N_TRAP; i++){
                 bool rigenera;
